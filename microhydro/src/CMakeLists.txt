@@ -3,7 +3,9 @@ project(MicroHydro LANGUAGES C CXX)
 
 find_package(Arcane REQUIRED)
 
-add_executable(MicroHydro MicroHydroModule.cc main.cc MicroHydro_axl.h AdditionalVariablesModule.cc AdditionalVariables_axl.h)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_executable(MicroHydro xdsl.o MicroHydroModule.cc main.cc MicroHydro_axl.h AdditionalVariablesModule.cc AdditionalVariables_axl.h)
 
 arcane_generate_axl(MicroHydro)
 arcane_generate_axl(AdditionalVariables)

@@ -1,0 +1,13 @@
+{ "op": "module",
+  "body": [
+    { "op": "function",
+      "name": "xdsl_main",
+      "args": [
+        ["i", "i64"]
+      ],
+      "body": [
+        { "op": "var", "name": "i" }
+      ]
+    }
+  ]
+}

@@ -723,30 +723,47 @@ inline void MicroHydroModule::computeCQs(Real3 node_coord[8],
            real_1div12;
 }
 
+// TODO: générer une fonction capable de lire cette struct.
 struct ComputeGeometricValuesView final {
   ComputeGeometricValuesView(
-      const ax::ItemVariableScalarInViewT<Arcane::Node, Arcane::Real3> &node_coord,
-      const ax::ItemVariableArrayOutViewT<Arcane::Cell, ax::View1DGetterSetter<Arcane::Real3>> &cell_cqs,
-      const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewGetterSetter<Arcane::Real>> &volume,
-      const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewSetter<Arcane::Real>> &old_volume,
-      const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewSetter<Arcane::Real>> &caracteristic_length)
-      : in_node_coord(node_coord)
-      , in_out_cell_cqs(cell_cqs)
-      , in_out_volume(volume)
-      , out_old_volume(old_volume)
-      , out_caracteristic_length(caracteristic_length)
-      {}
+      const ax::ItemVariableScalarInViewT<Arcane::Node, Arcane::Real3>
+          &node_coord,
+      const ax::ItemVariableArrayOutViewT<
+          Arcane::Cell, ax::View1DGetterSetter<Arcane::Real3>> &cell_cqs,
+      const ax::ItemVariableScalarOutViewT<
+          Arcane::Cell, Arcane::DataViewGetterSetter<Arcane::Real>> &volume,
+      const ax::ItemVariableScalarOutViewT<
+          Arcane::Cell, Arcane::DataViewSetter<Arcane::Real>> &old_volume,
+      const ax::ItemVariableScalarOutViewT<Arcane::Cell,
+                                           Arcane::DataViewSetter<Arcane::Real>>
+          &caracteristic_length)
+      : in_node_coord(node_coord), in_out_cell_cqs(cell_cqs),
+        in_out_volume(volume), out_old_volume(old_volume),
+        out_caracteristic_length(caracteristic_length) {}
 
-  const ax::ItemVariableScalarInViewT<Arcane::Node, Arcane::Real3> in_node_coord;
+  const ax::ItemVariableScalarInViewT<Arcane::Node, Arcane::Real3>
+      in_node_coord;
 
-  const ax::ItemVariableArrayOutViewT<Arcane::Cell, ax::View1DGetterSetter<Arcane::Real3>> in_out_cell_cqs;
+  const ax::ItemVariableArrayOutViewT<Arcane::Cell,
+                                      ax::View1DGetterSetter<Arcane::Real3>>
+      in_out_cell_cqs;
 
-  const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewGetterSetter<Arcane::Real>> in_out_volume;
+  const ax::ItemVariableScalarOutViewT<
+      Arcane::Cell, Arcane::DataViewGetterSetter<Arcane::Real>>
+      in_out_volume;
 
-  const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewSetter<Arcane::Real>> out_old_volume;
+  const ax::ItemVariableScalarOutViewT<Arcane::Cell,
+                                       Arcane::DataViewSetter<Arcane::Real>>
+      out_old_volume;
 
-  const ax::ItemVariableScalarOutViewT<Arcane::Cell, Arcane::DataViewSetter<Arcane::Real>> out_caracteristic_length;
+  const ax::ItemVariableScalarOutViewT<Arcane::Cell,
+                                       Arcane::DataViewSetter<Arcane::Real>>
+      out_caracteristic_length;
 };
+
+extern "C" {
+int _mlir_ciface_xdsl_main(int i);
+}
 
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
@@ -769,6 +786,10 @@ void MicroHydroModule::computeGeometricValues() {
       viewIn(command, m_node_coord), viewInOut(command, m_cell_cqs),
       viewInOut(command, m_volume), viewOut(command, m_old_volume),
       viewOut(command, m_caracteristic_length));
+
+  int result = 0;
+  result = _mlir_ciface_xdsl_main(4);
+  info() << "Résultat calculé depuis la fonction MLIR : " << result;
 
   auto cnc = m_connectivity_view.cellNode();
 
