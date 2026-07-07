@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/MicroHydroModule.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/MicroHydroModule.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/MicroHydroModule.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/MicroHydroModule.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/main.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/main.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/main.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/main.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/AdditionalVariablesModule.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/AdditionalVariablesModule.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/AdditionalVariablesModule.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/AdditionalVariablesModule.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/CSR.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/CSR.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/CSR.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/CSR.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/Metadata.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/Metadata.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/Metadata.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/Metadata.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMul.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMul.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMul.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMul.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulBinning.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulBinning.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulBinning.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulBinning.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulSymbolic.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulSymbolic.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulSymbolic.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulSymbolic.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulNumeric.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulNumeric.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityMatMulNumeric.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityMatMulNumeric.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityEWiseMatMul.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityEWiseMatMul.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityEWiseMatMul.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityEWiseMatMul.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityEWiseMatSub.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityEWiseMatSub.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityEWiseMatSub.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityEWiseMatSub.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/build_bench/microhydro",
+  "command": "/usr/bin/c++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/build_bench/microhydro -I/home/harterl/git/arcane-benchs/microhydro/src/../include -isystem /home/harterl/git/framework/install/include -isystem /usr/include/glib-2.0 -isystem /usr/lib64/glib-2.0/include -isystem /usr/include/openmpi-x86_64 -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/MicroHydro.dir/connectivix/ConnectivityTranspose.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityTranspose.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/connectivix/ConnectivityTranspose.cc",
+  "output": "microhydro/CMakeFiles/MicroHydro.dir/connectivix/ConnectivityTranspose.cc.o"
+}
+]

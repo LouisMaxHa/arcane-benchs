@@ -1,0 +1,24 @@
+{
+ "arcane-curves": {
+  "version": 1,
+  "curves": [{
+    "name": "CpuTime",
+    "unique-name": "CpuTime"
+   }, {
+    "name": "ElapsedTime",
+    "unique-name": "ElapsedTime"
+   }, {
+    "name": "GlobalCpuTime",
+    "unique-name": "GlobalCpuTime"
+   }, {
+    "name": "GlobalElapsedTime",
+    "unique-name": "GlobalElapsedTime"
+   }, {
+    "name": "GlobalTime",
+    "unique-name": "GlobalTime"
+   }, {
+    "name": "TotalMemory",
+    "unique-name": "TotalMemory"
+   }]
+ }
+}

@@ -37,6 +37,7 @@
 
 #include "MicroHydroTypes.h"
 #include "MicroHydro_axl.h"
+#include "memref_bridge.h"
 
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
@@ -762,7 +763,11 @@ struct ComputeGeometricValuesView final {
 };
 
 extern "C" {
-int _mlir_ciface_xdsl_main(int i);
+  void _mlir_ciface_xdsl_main(
+    MemRefType<int8_t, 1> face_coord,
+    int64_t cid,
+    MemRefType<int8_t, 1> out_caracteristic_length
+  );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -787,9 +792,6 @@ void MicroHydroModule::computeGeometricValues() {
       viewInOut(command, m_volume), viewOut(command, m_old_volume),
       viewOut(command, m_caracteristic_length));
 
-  int result = 0;
-  result = _mlir_ciface_xdsl_main(4);
-  info() << "Résultat calculé depuis la fonction MLIR : " << result;
 
   auto cnc = m_connectivity_view.cellNode();
 
@@ -814,7 +816,8 @@ void MicroHydroModule::computeGeometricValues() {
     };
 
     // Calcule la longueur caractéristique de la maille.
-    {
+    // Todo: re-écrire ce passage
+    // {
       Real3 median1 = face_coord[0] - face_coord[3];
       Real3 median2 = face_coord[2] - face_coord[5];
       Real3 median3 = face_coord[1] - face_coord[4];
@@ -824,8 +827,18 @@ void MicroHydroModule::computeGeometricValues() {
 
       Real dx_numerator = d1 * d2 * d3;
       Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
-      view.out_caracteristic_length[cid] = dx_numerator / dx_denominator;
-    }
+      Real expected = dx_numerator / dx_denominator;
+      // view.out_caracteristic_length[cid] = expected;
+    // }
+
+
+    _mlir_ciface_xdsl_main(
+      make_memref_1d<uint8_t>(reinterpret_cast<uint8_t *>(face_coord), 24 * 6),
+      cid,
+      make_memref_1d<uint8_t>(reinterpret_cast<uint8_t *>(view.out_caracteristic_length), 99999)
+    );
+    // info() << "Résultat calculé depuis la fonction MLIR : " << result;
+    assert view.out_caracteristic_length[cid] == expected;
 
     // Calcule les résultantes aux sommets
     computeCQs(coord, face_coord, view.in_out_cell_cqs[cid]);

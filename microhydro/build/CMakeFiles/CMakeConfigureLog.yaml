@@ -1,0 +1,782 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 5.14.0-687.5.3.el9_8.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/3.27.8/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/3.27.8/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5ed16/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5ed16.dir/build.make CMakeFiles/cmTC_5ed16.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6'
+        Building C object CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)
+        Target: x86_64-redhat-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang.cfg
+        System configuration file directory: /etc/clang/
+        Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/bin/clang-21" -cc1 -triple x86_64-redhat-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6 -v -fcoverage-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6 -resource-dir /usr/bin/../lib/clang/21 -dependency-file CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/bin/../lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-redhat-linux-gnu
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/clang/21/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Linking C executable cmTC_5ed16
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ed16.dir/link.txt --verbose=1
+        /usr/bin/clang  -v CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -o cmTC_5ed16 
+        clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)
+        Target: x86_64-redhat-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang.cfg
+        System configuration file directory: /etc/clang/
+        Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+         "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5ed16 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15 -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /lib/../lib64/crtn.o
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/bin/../lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/bin/../lib/clang/21/include] ==> [/usr/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/clang/21/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5ed16/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_5ed16.dir/build.make CMakeFiles/cmTC_5ed16.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6']
+        ignore line: [Building C object CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)]
+        ignore line: [Target: x86_64-redhat-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang.cfg]
+        ignore line: [System configuration file directory: /etc/clang/]
+        ignore line: [Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/bin/clang-21" -cc1 -triple x86_64-redhat-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6 -v -fcoverage-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-ItEks6 -resource-dir /usr/bin/../lib/clang/21 -dependency-file CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/bin/../lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-redhat-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/bin/../lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_5ed16]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ed16.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang  -v CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -o cmTC_5ed16 ]
+        ignore line: [clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)]
+        ignore line: [Target: x86_64-redhat-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang.cfg]
+        ignore line: [System configuration file directory: /etc/clang/]
+        ignore line: [Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5ed16 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15 -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /lib/../lib64/crtn.o]
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_5ed16] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu] ==> dir [/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu]
+          arg [-L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib64] ==> dir [/usr/lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [CMakeFiles/cmTC_5ed16.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+        collapse obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu] ==> [/usr/lib/clang/21/lib/x86_64-redhat-linux-gnu]
+        collapse library dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/opt/rh/gcc-toolset-15/root/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/usr/lib/clang/21/lib/x86_64-redhat-linux-gnu;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15;/opt/rh/gcc-toolset-15/root/usr/lib64;/lib64;/usr/lib64;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ca185/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ca185.dir/build.make CMakeFiles/cmTC_ca185.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh'
+        Building CXX object CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)
+        Target: x86_64-redhat-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang++.cfg
+        System configuration file directory: /etc/clang/
+        Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/bin/clang-21" -cc1 -triple x86_64-redhat-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh -v -fcoverage-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh -resource-dir /usr/bin/../lib/clang/21 -dependency-file CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15 -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward -internal-isystem /usr/bin/../lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-redhat-linux-gnu
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15
+         /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux
+         /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward
+         /usr/bin/../lib/clang/21/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_ca185
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca185.dir/link.txt --verbose=1
+        /usr/bin/clang++  -v CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ca185 
+        clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)
+        Target: x86_64-redhat-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang++.cfg
+        System configuration file directory: /etc/clang/
+        Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+         "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_ca185 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15 -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /lib/../lib64/crtn.o
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+          add: [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+          add: [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+          add: [/usr/bin/../lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15] ==> [/opt/rh/gcc-toolset-15/root/usr/include/c++/15]
+        collapse include dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux] ==> [/opt/rh/gcc-toolset-15/root/usr/include/c++/15/x86_64-redhat-linux]
+        collapse include dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward] ==> [/opt/rh/gcc-toolset-15/root/usr/include/c++/15/backward]
+        collapse include dir [/usr/bin/../lib/clang/21/include] ==> [/usr/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/opt/rh/gcc-toolset-15/root/usr/include/c++/15;/opt/rh/gcc-toolset-15/root/usr/include/c++/15/x86_64-redhat-linux;/opt/rh/gcc-toolset-15/root/usr/include/c++/15/backward;/usr/lib/clang/21/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ca185/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ca185.dir/build.make CMakeFiles/cmTC_ca185.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)]
+        ignore line: [Target: x86_64-redhat-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang++.cfg]
+        ignore line: [System configuration file directory: /etc/clang/]
+        ignore line: [Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/bin/clang-21" -cc1 -triple x86_64-redhat-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh -v -fcoverage-compilation-dir=/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-12J4oh -resource-dir /usr/bin/../lib/clang/21 -dependency-file CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15 -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward -internal-isystem /usr/bin/../lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-redhat-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+        ignore line: [ /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+        ignore line: [ /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/bin/../lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_ca185]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca185.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang++  -v CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ca185 ]
+        ignore line: [clang version 21.1.8 (AlmaLinux OS Foundation 21.1.8-2.el9)]
+        ignore line: [Target: x86_64-redhat-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang/x86_64-redhat-linux-gnu-clang++.cfg]
+        ignore line: [System configuration file directory: /etc/clang/]
+        ignore line: [Selected GCC installation: /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_ca185 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15 -L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /lib/../lib64/crtn.o]
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_ca185] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu] ==> dir [/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu]
+          arg [-L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib64] ==> dir [/usr/lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [CMakeFiles/cmTC_ca185.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+        collapse obj [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/usr/bin/../lib/clang/21/lib/x86_64-redhat-linux-gnu] ==> [/usr/lib/clang/21/lib/x86_64-redhat-linux-gnu]
+        collapse library dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15] ==> [/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/opt/rh/gcc-toolset-15/root//usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/opt/rh/gcc-toolset-15/root/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/usr/lib/clang/21/lib/x86_64-redhat-linux-gnu;/opt/rh/gcc-toolset-15/root/usr/lib/gcc/x86_64-redhat-linux/15;/opt/rh/gcc-toolset-15/root/usr/lib64;/lib64;/usr/lib64;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f914/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4f914.dir/build.make CMakeFiles/cmTC_4f914.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ'
+        Building C object CMakeFiles/cmTC_4f914.dir/test_mpi.c.o
+        /usr/bin/clang  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_4f914.dir/test_mpi.c.o -MF CMakeFiles/cmTC_4f914.dir/test_mpi.c.o.d -o CMakeFiles/cmTC_4f914.dir/test_mpi.c.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ/test_mpi.c
+        Linking C executable cmTC_4f914
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f914.dir/link.txt --verbose=1
+        /usr/bin/clang -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_4f914.dir/test_mpi.c.o -o cmTC_4f914  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-L7aVgJ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7f369/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7f369.dir/build.make CMakeFiles/cmTC_7f369.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K'
+        Building CXX object CMakeFiles/cmTC_7f369.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_7f369.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_7f369.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_7f369.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K/test_mpi.cpp
+        Linking CXX executable cmTC_7f369
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f369.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_7f369.dir/test_mpi.cpp.o -o cmTC_7f369  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-wREf8K'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0c614/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0c614.dir/build.make CMakeFiles/cmTC_0c614.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp'
+        Building CXX object CMakeFiles/cmTC_0c614.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_0c614.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_0c614.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_0c614.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp/test_mpi.cpp
+        Linking CXX executable cmTC_0c614
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c614.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_0c614.dir/test_mpi.cpp.o -o cmTC_0c614  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-7EUwQp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c015f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c015f.dir/build.make CMakeFiles/cmTC_c015f.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ'
+        Building C object CMakeFiles/cmTC_c015f.dir/test_mpi.c.o
+        /usr/bin/clang  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_c015f.dir/test_mpi.c.o -MF CMakeFiles/cmTC_c015f.dir/test_mpi.c.o.d -o CMakeFiles/cmTC_c015f.dir/test_mpi.c.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ/test_mpi.c
+        Linking C executable cmTC_c015f
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c015f.dir/link.txt --verbose=1
+        /usr/bin/clang -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_c015f.dir/test_mpi.c.o -o cmTC_c015f  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-10YeyZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d49e9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d49e9.dir/build.make CMakeFiles/cmTC_d49e9.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz'
+        Building CXX object CMakeFiles/cmTC_d49e9.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_d49e9.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_d49e9.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_d49e9.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz/test_mpi.cpp
+        Linking CXX executable cmTC_d49e9
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d49e9.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_d49e9.dir/test_mpi.cpp.o -o cmTC_d49e9  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-UFjVhz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b1fde/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b1fde.dir/build.make CMakeFiles/cmTC_b1fde.dir/build
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj'
+        Building CXX object CMakeFiles/cmTC_b1fde.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_b1fde.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_b1fde.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_b1fde.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj/test_mpi.cpp
+        Linking CXX executable cmTC_b1fde
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1fde.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_b1fde.dir/test_mpi.cpp.o -o cmTC_b1fde  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-AB1qOj'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6fa2/fast
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6fa2.dir/build.make CMakeFiles/cmTC_a6fa2.dir/build
+        gmake[2]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ'
+        Building C object CMakeFiles/cmTC_a6fa2.dir/test_mpi.c.o
+        /usr/bin/clang  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_a6fa2.dir/test_mpi.c.o -MF CMakeFiles/cmTC_a6fa2.dir/test_mpi.c.o.d -o CMakeFiles/cmTC_a6fa2.dir/test_mpi.c.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ/test_mpi.c
+        Linking C executable cmTC_a6fa2
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6fa2.dir/link.txt --verbose=1
+        /usr/bin/clang -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_a6fa2.dir/test_mpi.c.o -o cmTC_a6fa2  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ'
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-y8jOTJ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fdfff/fast
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fdfff.dir/build.make CMakeFiles/cmTC_fdfff.dir/build
+        gmake[2]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6'
+        Building CXX object CMakeFiles/cmTC_fdfff.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_fdfff.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_fdfff.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_fdfff.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6/test_mpi.cpp
+        Linking CXX executable cmTC_fdfff
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdfff.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_fdfff.dir/test_mpi.cpp.o -o cmTC_fdfff  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6'
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-V6oIC6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/local/share/cmake-3.27/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/arccon/build-system/Modules/FindMPI.cmake:24 (find_package)"
+      - "/usr/local/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arccore/ArccoreConfig.cmake:38 (find_dependency)"
+      - "/home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/lib/cmake/Arcane/ArcaneConfig.cmake:80 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5"
+      binary: "/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_07ab7/fast
+        gmake[1]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_07ab7.dir/build.make CMakeFiles/cmTC_07ab7.dir/build
+        gmake[2]: Entering directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5'
+        Building CXX object CMakeFiles/cmTC_07ab7.dir/test_mpi.cpp.o
+        /usr/bin/clang++  -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include  -MD -MT CMakeFiles/cmTC_07ab7.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_07ab7.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_07ab7.dir/test_mpi.cpp.o -c /home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5/test_mpi.cpp
+        Linking CXX executable cmTC_07ab7
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07ab7.dir/link.txt --verbose=1
+        /usr/bin/clang++ -Wl,-rpath -Wl,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib CMakeFiles/cmTC_07ab7.dir/test_mpi.cpp.o -o cmTC_07ab7  -Wl,-rpath,/home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5'
+        gmake[1]: Leaving directory '/home/harterl/git/arcane-benchs/microhydro/build/CMakeFiles/CMakeScratch/TryCompile-sgZuL5'
+        
+      exitCode: 0
+...

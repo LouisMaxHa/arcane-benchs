@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<arcane-result><config><case-name>output</case-name><host>UN00313508-UNAL.dam.intra.cea.fr</host><pid>221637</pid></config><execution><return-value>0</return-value><finish-date>2026-06-05T16:09:17</finish-date><date>2026-06-05T16:09:17</date><current-iteration>101</current-iteration><current-time>0.0614299160000641</current-time><end-time>0</end-time><deltat>0.000730312696125211</deltat><cpu-time>6.063813</cpu-time><is-finished>0</is-finished></execution></arcane-result>

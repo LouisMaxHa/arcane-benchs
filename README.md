@@ -34,8 +34,8 @@ repository if you use git submodules:
 ~~~{.sh}
 git submodule update --init --recursive
 cmake -S framework -B /tmp/arcane_build_path -DCMAKE_INSTALL_PREFIX=${ARCANE_INSTALL_PATH}
-cmake --build /tmp/arcane_build_path --target install
 ~~~
+cmake --build /tmp/arcane_build_path --target install
 
 ### Bench
 
@@ -44,7 +44,7 @@ compilation is forbidden. You can configure and compile the benchs using the fol
 
 ~~~{.sh}
 # To configure if you are in the source directory
-cmake -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=${ARCANE_INSTALL_PATH} -B build_bench
+cmake -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=${ARCANE_INSTALL_PATH} -B build_bench -DARCCORE_ENABLE_TBB=FALSE
 # To compile
 cmake --build build_bench
 ~~~

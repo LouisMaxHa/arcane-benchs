@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/harterl/git/arcane-benchs/microhydro/build",
+  "command": "/usr/bin/clang++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/microhydro/build -isystem /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/include/glib-2.0 -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/lib/glib-2.0/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/hdf5-1.14.6-a55vbvtax4nharpoqzkhwal7cqnycled/include -std=gnu++20 -o CMakeFiles/MicroHydro.dir/MicroHydroModule.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/MicroHydroModule.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/MicroHydroModule.cc",
+  "output": "CMakeFiles/MicroHydro.dir/MicroHydroModule.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/microhydro/build",
+  "command": "/usr/bin/clang++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/microhydro/build -isystem /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/include/glib-2.0 -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/lib/glib-2.0/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/hdf5-1.14.6-a55vbvtax4nharpoqzkhwal7cqnycled/include -std=gnu++20 -o CMakeFiles/MicroHydro.dir/main.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/main.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/main.cc",
+  "output": "CMakeFiles/MicroHydro.dir/main.cc.o"
+},
+{
+  "directory": "/home/harterl/git/arcane-benchs/microhydro/build",
+  "command": "/usr/bin/clang++  -I/home/harterl/git/arcane-benchs/microhydro/src/. -I/home/harterl/git/arcane-benchs/microhydro/build -isystem /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/include/glib-2.0 -isystem /home/harterl/git/spack/opt/spack/linux-icelake/glib-2.88.1-zkzqv5o4q7dp5f3fmha2pmzruiedrwnv/lib/glib-2.0/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/openmpi-5.0.10-447y6xrmjswo5vuzrmpw6p4k7cy6ybbn/include -isystem /home/harterl/git/spack/opt/spack/linux-icelake/hdf5-1.14.6-a55vbvtax4nharpoqzkhwal7cqnycled/include -std=gnu++20 -o CMakeFiles/MicroHydro.dir/AdditionalVariablesModule.cc.o -c /home/harterl/git/arcane-benchs/microhydro/src/AdditionalVariablesModule.cc",
+  "file": "/home/harterl/git/arcane-benchs/microhydro/src/AdditionalVariablesModule.cc",
+  "output": "CMakeFiles/MicroHydro.dir/AdditionalVariablesModule.cc.o"
+}
+]
