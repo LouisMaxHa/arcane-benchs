@@ -3,6 +3,7 @@ import sys
 from xdsljson.operations import (
     Alloc,
     Binary,
+    Math,
     Call,
     Const,
     DefineFunction,
@@ -45,12 +46,13 @@ module = Module([
     Function(
         "normL2",[
             ("r1", TyStruct("Real3"))
-        ], [
-            Binary("+f", 
-                Binary("*f", Var("r1", ["x"]), Var("r1", ["x"])),
-                Binary("+f",
-                    Binary("*f", Var("r1", ["y"]), Var("r1", ["y"])),
-                    Binary("*f", Var("r1", ["z"]), Var("r1", ["z"]))
+        ], [Math("sqrt",
+                Binary("+f", 
+                    Binary("*f", Var("r1", ["x"]), Var("r1", ["x"])),
+                    Binary("+f",
+                        Binary("*f", Var("r1", ["y"]), Var("r1", ["y"])),
+                        Binary("*f", Var("r1", ["z"]), Var("r1", ["z"]))
+                    )
                 )
             )
         ],
@@ -59,7 +61,7 @@ module = Module([
         "xdsl_main",[
             ("face_coord", TyMemref([6], TyStruct("Real3"))),
             ("cid", TyScalar(Scalar.i64)),
-            ("out_caracteristic_length", TyMemref([100], TyStruct("Real3"))),
+            ("out_caracteristic_length", TyMemref([100], TyScalar(Scalar.f64))),
         ], [
             Alloca("median1", TyStruct("Real3")),
             Set(Var("median1", ["x"]), Binary("-f", Var("face_coord", [0, "x"]), Var("face_coord", [3, "x"]))),
@@ -88,11 +90,10 @@ module = Module([
                     )
                 )
             ),
-            Set(Var("out_caracteristic_length", [Var("cid")]), Binary("/f", Var("dx_numerator"), Var("dx_denominator"))),
-            Set(Var("out_caracteristic_length", [Var("cid")]), Const(0.1, "f64")),
+            Set(Var("out_caracteristic_length", [Var("cid"), ]), Binary("/f", Var("dx_numerator"), Var("dx_denominator"))),
             Const(0, type=Scalar.i64)
         ],
     )
 ])
 
-compiler(module, [__file__, "--link"] + sys.argv[1:])
+compiler(module, [__file__] + sys.argv[1:])

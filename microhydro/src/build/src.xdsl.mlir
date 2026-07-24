@@ -1,251 +1,253 @@
-builtin.module {
-  func.func @normL2(%r1Arg: memref<24xi8>) -> f64 attributes {llvm.emit_c_interface} {
-    %const16.index = arith.constant 16 : index
-    %const8.index = arith.constant 8 : index
-    %const0.index = arith.constant 0 : index
-    %0 = memref.view %r1Arg[%const0.index][] : memref<24xi8> to memref<f64>
-    %1 = memref.alloca() : memref<f64>
-    %2 = memref.load %0[] : memref<f64>
-    memref.store %2, %1[] : memref<f64>
-    %3 = memref.view %r1Arg[%const0.index][] : memref<24xi8> to memref<f64>
-    %4 = memref.alloca() : memref<f64>
-    %5 = memref.load %3[] : memref<f64>
-    memref.store %5, %4[] : memref<f64>
-    %6 = memref.load %1[] : memref<f64>
-    %7 = memref.load %4[] : memref<f64>
-    %8 = arith.mulf %6, %7 : f64
-    %9 = memref.view %r1Arg[%const8.index][] : memref<24xi8> to memref<f64>
-    %10 = memref.alloca() : memref<f64>
-    %11 = memref.load %9[] : memref<f64>
-    memref.store %11, %10[] : memref<f64>
-    %12 = memref.view %r1Arg[%const8.index][] : memref<24xi8> to memref<f64>
-    %13 = memref.alloca() : memref<f64>
-    %14 = memref.load %12[] : memref<f64>
-    memref.store %14, %13[] : memref<f64>
-    %15 = memref.load %10[] : memref<f64>
-    %16 = memref.load %13[] : memref<f64>
-    %17 = arith.mulf %15, %16 : f64
-    %18 = memref.view %r1Arg[%const16.index][] : memref<24xi8> to memref<f64>
-    %19 = memref.alloca() : memref<f64>
-    %20 = memref.load %18[] : memref<f64>
-    memref.store %20, %19[] : memref<f64>
-    %21 = memref.view %r1Arg[%const16.index][] : memref<24xi8> to memref<f64>
-    %22 = memref.alloca() : memref<f64>
-    %23 = memref.load %21[] : memref<f64>
-    memref.store %23, %22[] : memref<f64>
-    %24 = memref.load %19[] : memref<f64>
-    %25 = memref.load %22[] : memref<f64>
-    %26 = arith.mulf %24, %25 : f64
-    %27 = arith.addf %17, %26 : f64
-    %28 = arith.addf %8, %27 : f64
-    func.return %28 : f64
+module {
+  func.func @normL2(%arg0: memref<24xi8>) -> f64 attributes {llvm.emit_c_interface} {
+    %c16 = arith.constant 16 : index
+    %c8 = arith.constant 8 : index
+    %c0 = arith.constant 0 : index
+    %view = memref.view %arg0[%c0][] : memref<24xi8> to memref<f64>
+    %alloca = memref.alloca() : memref<f64>
+    %0 = memref.load %view[] : memref<f64>
+    memref.store %0, %alloca[] : memref<f64>
+    %view_0 = memref.view %arg0[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_1 = memref.alloca() : memref<f64>
+    %1 = memref.load %view_0[] : memref<f64>
+    memref.store %1, %alloca_1[] : memref<f64>
+    %2 = memref.load %alloca[] : memref<f64>
+    %3 = memref.load %alloca_1[] : memref<f64>
+    %4 = arith.mulf %2, %3 : f64
+    %view_2 = memref.view %arg0[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_3 = memref.alloca() : memref<f64>
+    %5 = memref.load %view_2[] : memref<f64>
+    memref.store %5, %alloca_3[] : memref<f64>
+    %view_4 = memref.view %arg0[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_5 = memref.alloca() : memref<f64>
+    %6 = memref.load %view_4[] : memref<f64>
+    memref.store %6, %alloca_5[] : memref<f64>
+    %7 = memref.load %alloca_3[] : memref<f64>
+    %8 = memref.load %alloca_5[] : memref<f64>
+    %9 = arith.mulf %7, %8 : f64
+    %view_6 = memref.view %arg0[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_7 = memref.alloca() : memref<f64>
+    %10 = memref.load %view_6[] : memref<f64>
+    memref.store %10, %alloca_7[] : memref<f64>
+    %view_8 = memref.view %arg0[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_9 = memref.alloca() : memref<f64>
+    %11 = memref.load %view_8[] : memref<f64>
+    memref.store %11, %alloca_9[] : memref<f64>
+    %12 = memref.load %alloca_7[] : memref<f64>
+    %13 = memref.load %alloca_9[] : memref<f64>
+    %14 = arith.mulf %12, %13 : f64
+    %15 = arith.addf %9, %14 : f64
+    %16 = arith.addf %4, %15 : f64
+    return %16 : f64
   }
-  func.func @xdsl_main(%face_coordArg: memref<144xi8>, %cidArg: i64, %out_caracteristic_lengthArg: memref<2400xi8>) -> i64 attributes {llvm.emit_c_interface} {
-    %const0.i64 = arith.constant 0 : i64
-    %const0.1.f64 = arith.constant 1.000000e-01 : f64
-    %const4.index = arith.constant 4 : index
-    %const5.index = arith.constant 5 : index
-    %const2.index = arith.constant 2 : index
-    %const16.index = arith.constant 16 : index
-    %const8.index = arith.constant 8 : index
-    %const3.index = arith.constant 3 : index
-    %const1.index = arith.constant 1 : index
-    %const24.index = arith.constant 24 : index
-    %const0.index = arith.constant 0 : index
-    %0 = memref.alloca() : memref<i64>
-    memref.store %cidArg, %0[] : memref<i64>
-    %1 = memref.alloca() : memref<24xi8>
-    %2 = arith.muli %const0.index, %const24.index : index
-    %3 = memref.subview %face_coordArg[%2] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %4 = memref.view %3[%const0.index][] : memref<24xi8> to memref<f64>
-    %5 = memref.alloca() : memref<f64>
-    %6 = memref.load %4[] : memref<f64>
-    memref.store %6, %5[] : memref<f64>
-    %7 = arith.muli %const3.index, %const24.index : index
-    %8 = memref.subview %face_coordArg[%7] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %9 = memref.view %8[%const0.index][] : memref<24xi8> to memref<f64>
-    %10 = memref.alloca() : memref<f64>
-    %11 = memref.load %9[] : memref<f64>
-    memref.store %11, %10[] : memref<f64>
-    %12 = memref.load %5[] : memref<f64>
-    %13 = memref.load %10[] : memref<f64>
-    %14 = arith.subf %12, %13 : f64
-    %15 = memref.view %1[%const0.index][] : memref<24xi8> to memref<f64>
-    memref.store %14, %15[] : memref<f64>
-    %16 = arith.muli %const0.index, %const24.index : index
-    %17 = memref.subview %face_coordArg[%16] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %18 = memref.view %17[%const8.index][] : memref<24xi8> to memref<f64>
-    %19 = memref.alloca() : memref<f64>
-    %20 = memref.load %18[] : memref<f64>
-    memref.store %20, %19[] : memref<f64>
-    %21 = arith.muli %const3.index, %const24.index : index
-    %22 = memref.subview %face_coordArg[%21] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %23 = memref.view %22[%const8.index][] : memref<24xi8> to memref<f64>
-    %24 = memref.alloca() : memref<f64>
-    %25 = memref.load %23[] : memref<f64>
-    memref.store %25, %24[] : memref<f64>
-    %26 = memref.load %19[] : memref<f64>
-    %27 = memref.load %24[] : memref<f64>
-    %28 = arith.subf %26, %27 : f64
-    %29 = memref.view %1[%const8.index][] : memref<24xi8> to memref<f64>
-    memref.store %28, %29[] : memref<f64>
-    %30 = arith.muli %const0.index, %const24.index : index
-    %31 = memref.subview %face_coordArg[%30] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %32 = memref.view %31[%const16.index][] : memref<24xi8> to memref<f64>
-    %33 = memref.alloca() : memref<f64>
-    %34 = memref.load %32[] : memref<f64>
-    memref.store %34, %33[] : memref<f64>
-    %35 = arith.muli %const3.index, %const24.index : index
-    %36 = memref.subview %face_coordArg[%35] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %37 = memref.view %36[%const16.index][] : memref<24xi8> to memref<f64>
-    %38 = memref.alloca() : memref<f64>
-    %39 = memref.load %37[] : memref<f64>
-    memref.store %39, %38[] : memref<f64>
-    %40 = memref.load %33[] : memref<f64>
-    %41 = memref.load %38[] : memref<f64>
-    %42 = arith.subf %40, %41 : f64
-    %43 = memref.view %1[%const16.index][] : memref<24xi8> to memref<f64>
-    memref.store %42, %43[] : memref<f64>
-    %44 = memref.alloca() : memref<24xi8>
-    %45 = arith.muli %const2.index, %const24.index : index
-    %46 = memref.subview %face_coordArg[%45] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %47 = memref.view %46[%const0.index][] : memref<24xi8> to memref<f64>
-    %48 = memref.alloca() : memref<f64>
-    %49 = memref.load %47[] : memref<f64>
-    memref.store %49, %48[] : memref<f64>
-    %50 = arith.muli %const5.index, %const24.index : index
-    %51 = memref.subview %face_coordArg[%50] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %52 = memref.view %51[%const0.index][] : memref<24xi8> to memref<f64>
-    %53 = memref.alloca() : memref<f64>
-    %54 = memref.load %52[] : memref<f64>
-    memref.store %54, %53[] : memref<f64>
-    %55 = memref.load %48[] : memref<f64>
-    %56 = memref.load %53[] : memref<f64>
-    %57 = arith.subf %55, %56 : f64
-    %58 = memref.view %44[%const0.index][] : memref<24xi8> to memref<f64>
-    memref.store %57, %58[] : memref<f64>
-    %59 = arith.muli %const2.index, %const24.index : index
-    %60 = memref.subview %face_coordArg[%59] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %61 = memref.view %60[%const8.index][] : memref<24xi8> to memref<f64>
-    %62 = memref.alloca() : memref<f64>
-    %63 = memref.load %61[] : memref<f64>
-    memref.store %63, %62[] : memref<f64>
-    %64 = arith.muli %const5.index, %const24.index : index
-    %65 = memref.subview %face_coordArg[%64] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %66 = memref.view %65[%const8.index][] : memref<24xi8> to memref<f64>
-    %67 = memref.alloca() : memref<f64>
-    %68 = memref.load %66[] : memref<f64>
-    memref.store %68, %67[] : memref<f64>
-    %69 = memref.load %62[] : memref<f64>
-    %70 = memref.load %67[] : memref<f64>
-    %71 = arith.subf %69, %70 : f64
-    %72 = memref.view %44[%const8.index][] : memref<24xi8> to memref<f64>
-    memref.store %71, %72[] : memref<f64>
-    %73 = arith.muli %const2.index, %const24.index : index
-    %74 = memref.subview %face_coordArg[%73] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %75 = memref.view %74[%const16.index][] : memref<24xi8> to memref<f64>
-    %76 = memref.alloca() : memref<f64>
-    %77 = memref.load %75[] : memref<f64>
-    memref.store %77, %76[] : memref<f64>
-    %78 = arith.muli %const5.index, %const24.index : index
-    %79 = memref.subview %face_coordArg[%78] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %80 = memref.view %79[%const16.index][] : memref<24xi8> to memref<f64>
-    %81 = memref.alloca() : memref<f64>
-    %82 = memref.load %80[] : memref<f64>
-    memref.store %82, %81[] : memref<f64>
-    %83 = memref.load %76[] : memref<f64>
-    %84 = memref.load %81[] : memref<f64>
-    %85 = arith.subf %83, %84 : f64
-    %86 = memref.view %44[%const16.index][] : memref<24xi8> to memref<f64>
-    memref.store %85, %86[] : memref<f64>
-    %87 = memref.alloca() : memref<24xi8>
-    %88 = arith.muli %const1.index, %const24.index : index
-    %89 = memref.subview %face_coordArg[%88] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %90 = memref.view %89[%const0.index][] : memref<24xi8> to memref<f64>
-    %91 = memref.alloca() : memref<f64>
-    %92 = memref.load %90[] : memref<f64>
-    memref.store %92, %91[] : memref<f64>
-    %93 = arith.muli %const4.index, %const24.index : index
-    %94 = memref.subview %face_coordArg[%93] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %95 = memref.view %94[%const0.index][] : memref<24xi8> to memref<f64>
-    %96 = memref.alloca() : memref<f64>
-    %97 = memref.load %95[] : memref<f64>
-    memref.store %97, %96[] : memref<f64>
-    %98 = memref.load %91[] : memref<f64>
-    %99 = memref.load %96[] : memref<f64>
-    %100 = arith.subf %98, %99 : f64
-    %101 = memref.view %87[%const0.index][] : memref<24xi8> to memref<f64>
-    memref.store %100, %101[] : memref<f64>
-    %102 = arith.muli %const1.index, %const24.index : index
-    %103 = memref.subview %face_coordArg[%102] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %104 = memref.view %103[%const8.index][] : memref<24xi8> to memref<f64>
-    %105 = memref.alloca() : memref<f64>
-    %106 = memref.load %104[] : memref<f64>
-    memref.store %106, %105[] : memref<f64>
-    %107 = arith.muli %const4.index, %const24.index : index
-    %108 = memref.subview %face_coordArg[%107] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %109 = memref.view %108[%const8.index][] : memref<24xi8> to memref<f64>
-    %110 = memref.alloca() : memref<f64>
-    %111 = memref.load %109[] : memref<f64>
-    memref.store %111, %110[] : memref<f64>
-    %112 = memref.load %105[] : memref<f64>
-    %113 = memref.load %110[] : memref<f64>
-    %114 = arith.subf %112, %113 : f64
-    %115 = memref.view %87[%const8.index][] : memref<24xi8> to memref<f64>
-    memref.store %114, %115[] : memref<f64>
-    %116 = arith.muli %const1.index, %const24.index : index
-    %117 = memref.subview %face_coordArg[%116] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %118 = memref.view %117[%const16.index][] : memref<24xi8> to memref<f64>
-    %119 = memref.alloca() : memref<f64>
-    %120 = memref.load %118[] : memref<f64>
-    memref.store %120, %119[] : memref<f64>
-    %121 = arith.muli %const4.index, %const24.index : index
-    %122 = memref.subview %face_coordArg[%121] [%const24.index] [%const1.index] : memref<144xi8> to memref<24xi8>
-    %123 = memref.view %122[%const16.index][] : memref<24xi8> to memref<f64>
-    %124 = memref.alloca() : memref<f64>
-    %125 = memref.load %123[] : memref<f64>
-    memref.store %125, %124[] : memref<f64>
-    %126 = memref.load %119[] : memref<f64>
-    %127 = memref.load %124[] : memref<f64>
-    %128 = arith.subf %126, %127 : f64
-    %129 = memref.view %87[%const16.index][] : memref<24xi8> to memref<f64>
-    memref.store %128, %129[] : memref<f64>
-    %130 = func.call @normL2(%1) : (memref<24xi8>) -> f64
-    %131 = memref.alloca() : memref<f64>
-    memref.store %130, %131[] : memref<f64>
-    %132 = func.call @normL2(%44) : (memref<24xi8>) -> f64
-    %133 = memref.alloca() : memref<f64>
-    memref.store %132, %133[] : memref<f64>
-    %134 = func.call @normL2(%87) : (memref<24xi8>) -> f64
-    %135 = memref.alloca() : memref<f64>
-    memref.store %134, %135[] : memref<f64>
-    %136 = memref.load %131[] : memref<f64>
-    %137 = memref.load %133[] : memref<f64>
-    %138 = memref.load %135[] : memref<f64>
-    %139 = arith.mulf %137, %138 : f64
-    %140 = arith.mulf %136, %139 : f64
-    %141 = memref.alloca() : memref<f64>
-    memref.store %140, %141[] : memref<f64>
-    %142 = memref.load %131[] : memref<f64>
-    %143 = memref.load %133[] : memref<f64>
-    %144 = arith.mulf %142, %143 : f64
-    %145 = memref.load %131[] : memref<f64>
-    %146 = memref.load %135[] : memref<f64>
-    %147 = arith.mulf %145, %146 : f64
-    %148 = memref.load %133[] : memref<f64>
-    %149 = memref.load %135[] : memref<f64>
-    %150 = arith.mulf %148, %149 : f64
-    %151 = arith.addf %147, %150 : f64
-    %152 = arith.addf %144, %151 : f64
-    %153 = memref.alloca() : memref<f64>
-    memref.store %152, %153[] : memref<f64>
-    %154 = memref.load %141[] : memref<f64>
-    %155 = memref.load %153[] : memref<f64>
-    %156 = arith.divf %154, %155 : f64
-    %157 = memref.load %0[] : memref<i64>
-    memref.store %156, %out_caracteristic_lengthArg[%157] : memref<2400xi8>
-    %158 = memref.load %0[] : memref<i64>
-    memref.store %const0.1.f64, %out_caracteristic_lengthArg[%158] : memref<2400xi8>
-    func.return %const0.i64 : i64
+  func.func @xdsl_main(%arg0: memref<144xi8>, %arg1: i64, %arg2: memref<100xf64>) -> i64 attributes {llvm.emit_c_interface} {
+    %c0_i64 = arith.constant 0 : i64
+    %cst = arith.constant 1.000000e-01 : f64
+    %c4 = arith.constant 4 : index
+    %c1 = arith.constant 1 : index
+    %c5 = arith.constant 5 : index
+    %c2 = arith.constant 2 : index
+    %c16 = arith.constant 16 : index
+    %c8 = arith.constant 8 : index
+    %c3 = arith.constant 3 : index
+    %c24 = arith.constant 24 : index
+    %c0 = arith.constant 0 : index
+    %alloca = memref.alloca() : memref<i64>
+    memref.store %arg1, %alloca[] : memref<i64>
+    %alloca_0 = memref.alloca() : memref<24xi8>
+    %0 = arith.muli %c0, %c24 : index
+    %view = memref.view %arg0[%0][] : memref<144xi8> to memref<24xi8>
+    %view_1 = memref.view %view[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_2 = memref.alloca() : memref<f64>
+    %1 = memref.load %view_1[] : memref<f64>
+    memref.store %1, %alloca_2[] : memref<f64>
+    %2 = arith.muli %c3, %c24 : index
+    %view_3 = memref.view %arg0[%2][] : memref<144xi8> to memref<24xi8>
+    %view_4 = memref.view %view_3[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_5 = memref.alloca() : memref<f64>
+    %3 = memref.load %view_4[] : memref<f64>
+    memref.store %3, %alloca_5[] : memref<f64>
+    %4 = memref.load %alloca_2[] : memref<f64>
+    %5 = memref.load %alloca_5[] : memref<f64>
+    %6 = arith.subf %4, %5 : f64
+    %view_6 = memref.view %alloca_0[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %6, %view_6[] : memref<f64>
+    %7 = arith.muli %c0, %c24 : index
+    %view_7 = memref.view %arg0[%7][] : memref<144xi8> to memref<24xi8>
+    %view_8 = memref.view %view_7[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_9 = memref.alloca() : memref<f64>
+    %8 = memref.load %view_8[] : memref<f64>
+    memref.store %8, %alloca_9[] : memref<f64>
+    %9 = arith.muli %c3, %c24 : index
+    %view_10 = memref.view %arg0[%9][] : memref<144xi8> to memref<24xi8>
+    %view_11 = memref.view %view_10[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_12 = memref.alloca() : memref<f64>
+    %10 = memref.load %view_11[] : memref<f64>
+    memref.store %10, %alloca_12[] : memref<f64>
+    %11 = memref.load %alloca_9[] : memref<f64>
+    %12 = memref.load %alloca_12[] : memref<f64>
+    %13 = arith.subf %11, %12 : f64
+    %view_13 = memref.view %alloca_0[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %13, %view_13[] : memref<f64>
+    %14 = arith.muli %c0, %c24 : index
+    %view_14 = memref.view %arg0[%14][] : memref<144xi8> to memref<24xi8>
+    %view_15 = memref.view %view_14[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_16 = memref.alloca() : memref<f64>
+    %15 = memref.load %view_15[] : memref<f64>
+    memref.store %15, %alloca_16[] : memref<f64>
+    %16 = arith.muli %c3, %c24 : index
+    %view_17 = memref.view %arg0[%16][] : memref<144xi8> to memref<24xi8>
+    %view_18 = memref.view %view_17[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_19 = memref.alloca() : memref<f64>
+    %17 = memref.load %view_18[] : memref<f64>
+    memref.store %17, %alloca_19[] : memref<f64>
+    %18 = memref.load %alloca_16[] : memref<f64>
+    %19 = memref.load %alloca_19[] : memref<f64>
+    %20 = arith.subf %18, %19 : f64
+    %view_20 = memref.view %alloca_0[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %20, %view_20[] : memref<f64>
+    %alloca_21 = memref.alloca() : memref<24xi8>
+    %21 = arith.muli %c2, %c24 : index
+    %view_22 = memref.view %arg0[%21][] : memref<144xi8> to memref<24xi8>
+    %view_23 = memref.view %view_22[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_24 = memref.alloca() : memref<f64>
+    %22 = memref.load %view_23[] : memref<f64>
+    memref.store %22, %alloca_24[] : memref<f64>
+    %23 = arith.muli %c5, %c24 : index
+    %view_25 = memref.view %arg0[%23][] : memref<144xi8> to memref<24xi8>
+    %view_26 = memref.view %view_25[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_27 = memref.alloca() : memref<f64>
+    %24 = memref.load %view_26[] : memref<f64>
+    memref.store %24, %alloca_27[] : memref<f64>
+    %25 = memref.load %alloca_24[] : memref<f64>
+    %26 = memref.load %alloca_27[] : memref<f64>
+    %27 = arith.subf %25, %26 : f64
+    %view_28 = memref.view %alloca_21[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %27, %view_28[] : memref<f64>
+    %28 = arith.muli %c2, %c24 : index
+    %view_29 = memref.view %arg0[%28][] : memref<144xi8> to memref<24xi8>
+    %view_30 = memref.view %view_29[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_31 = memref.alloca() : memref<f64>
+    %29 = memref.load %view_30[] : memref<f64>
+    memref.store %29, %alloca_31[] : memref<f64>
+    %30 = arith.muli %c5, %c24 : index
+    %view_32 = memref.view %arg0[%30][] : memref<144xi8> to memref<24xi8>
+    %view_33 = memref.view %view_32[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_34 = memref.alloca() : memref<f64>
+    %31 = memref.load %view_33[] : memref<f64>
+    memref.store %31, %alloca_34[] : memref<f64>
+    %32 = memref.load %alloca_31[] : memref<f64>
+    %33 = memref.load %alloca_34[] : memref<f64>
+    %34 = arith.subf %32, %33 : f64
+    %view_35 = memref.view %alloca_21[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %34, %view_35[] : memref<f64>
+    %35 = arith.muli %c2, %c24 : index
+    %view_36 = memref.view %arg0[%35][] : memref<144xi8> to memref<24xi8>
+    %view_37 = memref.view %view_36[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_38 = memref.alloca() : memref<f64>
+    %36 = memref.load %view_37[] : memref<f64>
+    memref.store %36, %alloca_38[] : memref<f64>
+    %37 = arith.muli %c5, %c24 : index
+    %view_39 = memref.view %arg0[%37][] : memref<144xi8> to memref<24xi8>
+    %view_40 = memref.view %view_39[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_41 = memref.alloca() : memref<f64>
+    %38 = memref.load %view_40[] : memref<f64>
+    memref.store %38, %alloca_41[] : memref<f64>
+    %39 = memref.load %alloca_38[] : memref<f64>
+    %40 = memref.load %alloca_41[] : memref<f64>
+    %41 = arith.subf %39, %40 : f64
+    %view_42 = memref.view %alloca_21[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %41, %view_42[] : memref<f64>
+    %alloca_43 = memref.alloca() : memref<24xi8>
+    %42 = arith.muli %c1, %c24 : index
+    %view_44 = memref.view %arg0[%42][] : memref<144xi8> to memref<24xi8>
+    %view_45 = memref.view %view_44[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_46 = memref.alloca() : memref<f64>
+    %43 = memref.load %view_45[] : memref<f64>
+    memref.store %43, %alloca_46[] : memref<f64>
+    %44 = arith.muli %c4, %c24 : index
+    %view_47 = memref.view %arg0[%44][] : memref<144xi8> to memref<24xi8>
+    %view_48 = memref.view %view_47[%c0][] : memref<24xi8> to memref<f64>
+    %alloca_49 = memref.alloca() : memref<f64>
+    %45 = memref.load %view_48[] : memref<f64>
+    memref.store %45, %alloca_49[] : memref<f64>
+    %46 = memref.load %alloca_46[] : memref<f64>
+    %47 = memref.load %alloca_49[] : memref<f64>
+    %48 = arith.subf %46, %47 : f64
+    %view_50 = memref.view %alloca_43[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %48, %view_50[] : memref<f64>
+    %49 = arith.muli %c1, %c24 : index
+    %view_51 = memref.view %arg0[%49][] : memref<144xi8> to memref<24xi8>
+    %view_52 = memref.view %view_51[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_53 = memref.alloca() : memref<f64>
+    %50 = memref.load %view_52[] : memref<f64>
+    memref.store %50, %alloca_53[] : memref<f64>
+    %51 = arith.muli %c4, %c24 : index
+    %view_54 = memref.view %arg0[%51][] : memref<144xi8> to memref<24xi8>
+    %view_55 = memref.view %view_54[%c8][] : memref<24xi8> to memref<f64>
+    %alloca_56 = memref.alloca() : memref<f64>
+    %52 = memref.load %view_55[] : memref<f64>
+    memref.store %52, %alloca_56[] : memref<f64>
+    %53 = memref.load %alloca_53[] : memref<f64>
+    %54 = memref.load %alloca_56[] : memref<f64>
+    %55 = arith.subf %53, %54 : f64
+    %view_57 = memref.view %alloca_43[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %55, %view_57[] : memref<f64>
+    %56 = arith.muli %c1, %c24 : index
+    %view_58 = memref.view %arg0[%56][] : memref<144xi8> to memref<24xi8>
+    %view_59 = memref.view %view_58[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_60 = memref.alloca() : memref<f64>
+    %57 = memref.load %view_59[] : memref<f64>
+    memref.store %57, %alloca_60[] : memref<f64>
+    %58 = arith.muli %c4, %c24 : index
+    %view_61 = memref.view %arg0[%58][] : memref<144xi8> to memref<24xi8>
+    %view_62 = memref.view %view_61[%c16][] : memref<24xi8> to memref<f64>
+    %alloca_63 = memref.alloca() : memref<f64>
+    %59 = memref.load %view_62[] : memref<f64>
+    memref.store %59, %alloca_63[] : memref<f64>
+    %60 = memref.load %alloca_60[] : memref<f64>
+    %61 = memref.load %alloca_63[] : memref<f64>
+    %62 = arith.subf %60, %61 : f64
+    %view_64 = memref.view %alloca_43[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %62, %view_64[] : memref<f64>
+    %63 = call @normL2(%alloca_0) : (memref<24xi8>) -> f64
+    %alloca_65 = memref.alloca() : memref<f64>
+    memref.store %63, %alloca_65[] : memref<f64>
+    %64 = call @normL2(%alloca_21) : (memref<24xi8>) -> f64
+    %alloca_66 = memref.alloca() : memref<f64>
+    memref.store %64, %alloca_66[] : memref<f64>
+    %65 = call @normL2(%alloca_43) : (memref<24xi8>) -> f64
+    %alloca_67 = memref.alloca() : memref<f64>
+    memref.store %65, %alloca_67[] : memref<f64>
+    %66 = memref.load %alloca_65[] : memref<f64>
+    %67 = memref.load %alloca_66[] : memref<f64>
+    %68 = memref.load %alloca_67[] : memref<f64>
+    %69 = arith.mulf %67, %68 : f64
+    %70 = arith.mulf %66, %69 : f64
+    %alloca_68 = memref.alloca() : memref<f64>
+    memref.store %70, %alloca_68[] : memref<f64>
+    %71 = memref.load %alloca_65[] : memref<f64>
+    %72 = memref.load %alloca_66[] : memref<f64>
+    %73 = arith.mulf %71, %72 : f64
+    %74 = memref.load %alloca_65[] : memref<f64>
+    %75 = memref.load %alloca_67[] : memref<f64>
+    %76 = arith.mulf %74, %75 : f64
+    %77 = memref.load %alloca_66[] : memref<f64>
+    %78 = memref.load %alloca_67[] : memref<f64>
+    %79 = arith.mulf %77, %78 : f64
+    %80 = arith.addf %76, %79 : f64
+    %81 = arith.addf %73, %80 : f64
+    %alloca_69 = memref.alloca() : memref<f64>
+    memref.store %81, %alloca_69[] : memref<f64>
+    %82 = memref.load %alloca_68[] : memref<f64>
+    %83 = memref.load %alloca_69[] : memref<f64>
+    %84 = arith.divf %82, %83 : f64
+    %85 = memref.load %alloca[] : memref<i64>
+    %86 = arith.index_cast %85 : i64 to index
+    memref.store %84, %arg2[%86] : memref<100xf64>
+    %87 = memref.load %alloca[] : memref<i64>
+    %88 = arith.index_cast %87 : i64 to index
+    memref.store %cst, %arg2[%88] : memref<100xf64>
+    return %c0_i64 : i64
   }
 }

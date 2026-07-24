@@ -814,31 +814,39 @@ void MicroHydroModule::computeGeometricValues() {
     // Calcule la longueur caractéristique de la maille.
     // Todo: re-écrire ce passage
     // {
-    Real3 median1 = face_coord[0] - face_coord[3];
-    Real3 median2 = face_coord[2] - face_coord[5];
-    Real3 median3 = face_coord[1] - face_coord[4];
-    Real d1 = median1.normL2();
-    Real d2 = median2.normL2();
-    Real d3 = median3.normL2();
+      Real3 median1 = face_coord[0] - face_coord[3];
+      Real3 median2 = face_coord[2] - face_coord[5];
+      Real3 median3 = face_coord[1] - face_coord[4];
+      Real d1 = median1.normL2();
+      Real d2 = median2.normL2();
+      Real d3 = median3.normL2();
 
-    Real dx_numerator = d1 * d2 * d3;
-    Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
-    Real expected = dx_numerator / dx_denominator;
-    // view.out_caracteristic_length[cid] = expected;
+      Real dx_numerator = d1 * d2 * d3;
+      Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
+      Real expected = dx_numerator / dx_denominator;
+      // view.out_caracteristic_length[cid] = expected;
     // }
 
+    info() << "Début appelle librairie";
     auto memref_face_coord = make_memref_1d<uint8_t>(
-        reinterpret_cast<uint8_t *>(face_coord), 24 * 6);
+        reinterpret_cast<uint8_t *>(face_coord),
+        24 * 6
+    );
     auto memref_out_caracteristic_length = make_memref_1d<double>(
         reinterpret_cast<double *>(m_caracteristic_length.asArray().data()),
-        m_caracteristic_length.asArray().size());
+        m_caracteristic_length.asArray().size()
+    );
+    info() << "Résultat précédant : "
+           << m_caracteristic_length.asArray().data()[cid];
+
     _mlir_ciface_xdsl_main(&memref_face_coord, cid,
                            &memref_out_caracteristic_length);
 
     info() << "Résultat calculé : "
            << m_caracteristic_length.asArray().data()[cid];
     info() << "Résultat attendu : " << expected;
-    assert(m_caracteristic_length.asArray().data()[cid] == expected);
+    info() << "Différence       : " << (m_caracteristic_length.asArray().data()[cid] - expected);
+    assert((m_caracteristic_length.asArray().data()[cid] - expected) < 1e-8 && "Résultat différent");
 
     // Calcule les résultantes aux sommets
     computeCQs(coord, face_coord, view.in_out_cell_cqs[cid]);

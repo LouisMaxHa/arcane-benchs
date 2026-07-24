@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/lmx/git/arcane-benchs/microhydro/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

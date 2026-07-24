@@ -1,0 +1,2686 @@
+*L-Init     The mesh file is 
+*L-TimeLoopMng Registering the time loop MicroHydroLoop
+*L-TimeLoopMng [07/24/2026 14:47:05] Using time loop MicroHydroLoop
+*L-CaseMng  Register case option <master>
+*L-TimeLoopMng  Add an entry point <Master::MasterBuild>
+*L-CaseMng  Register case option <arcane-cea-verifier>
+*L-TimeLoopMng  Add an entry point <ArcaneCeaVerifier::VerifierOnExit>
+*L-TimeLoopMng  Add an entry point <ArcaneCeaVerifier::VerifierOnInit>
+*L-CaseMng  Register case option <micro-hydro>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_HydroBuild>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_HydroExit>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_HydroInit>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_HydroStartInit>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_HydroOnMeshChanged>
+*L-TimeLoopMng  Add an entry point <MicroHydro::SH_DoOneIteration>
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_HydroBuild'
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_DoOneIteration'
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_HydroOnMeshChanged'
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_HydroStartInit'
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_HydroInit'
+*L-TimeLoopMng Looking for entry point 'MicroHydro.SH_HydroExit'
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneTimeLoopBegin' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterStartInit' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterInit' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterContinueInit' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterLoopExit' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterLoopMeshChanged' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneMasterLoopRestore' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryBegin' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryInit' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryStartInit' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryContinueInit' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryRestore' to the execution
+*L-TimeLoopMng Adding the entry point `Master::MasterBuild' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneCeaVerifier::VerifierOnInit' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_HydroBuild' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_DoOneIteration' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_HydroOnMeshChanged' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_HydroStartInit' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_HydroInit' to the execution
+*L-TimeLoopMng Adding the entry point `MicroHydro::SH_HydroExit' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneCeaVerifier::VerifierOnExit' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryStartInitEnd' to the execution
+*L-TimeLoopMng Adding the entry point `TimeHistoryMng::ArcaneTimeHistoryEnd' to the execution
+*L-TimeLoopMng Adding the entry point `ArcaneMasterInternal::ArcaneTimeLoopEnd' to the execution
+*L-CaseMng  Register case option <meshes>
+*L-Internal [07/24/2026 14:47:05] Initialisation du code.
+*L-Mesh     ItemSharedInfoList: write: Node count=1 changed=1
+*L-Mesh     ItemSharedInfoList: write: Face count=1 changed=1
+*L-Mesh     ItemSharedInfoList: write: Cell count=1 changed=1
+*L-Internal [07/24/2026 14:47:12] Info output in 'coderesult.xml'
+*L-Internal [07/24/2026 14:47:35] Execution of the end of compute entry points
+*L-Internal TimeStats:{
+ "EntryPoints": [{
+   "Name": "ArcaneTimeLoopBegin",
+   "TotalCpuTime": 0.0021011829376220705,
+   "TotalElapsedTime": 0.0021011829376220705,
+   "NbCall": 10,
+   "Where": "ComputeLoop"
+  }, {
+   "Name": "ArcaneTimeLoopEnd",
+   "TotalCpuTime": 0.0042383670806884769,
+   "TotalElapsedTime": 0.0042383670806884769,
+   "NbCall": 10,
+   "Where": "ComputeLoop"
+  }, {
+   "Name": "ArcaneMasterStartInit",
+   "TotalCpuTime": 0.00003933906555175781,
+   "TotalElapsedTime": 0.00003933906555175781,
+   "NbCall": 1,
+   "Where": "StartInit"
+  }, {
+   "Name": "ArcaneMasterInit",
+   "TotalCpuTime": 0.000009298324584960938,
+   "TotalElapsedTime": 0.000009298324584960938,
+   "NbCall": 1,
+   "Where": "Init"
+  }, {
+   "Name": "ArcaneMasterContinueInit",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "ContinueInit"
+  }, {
+   "Name": "ArcaneMasterLoopExit",
+   "TotalCpuTime": 0.000015974044799804689,
+   "TotalElapsedTime": 0.000015974044799804689,
+   "NbCall": 1,
+   "Where": "Exit"
+  }, {
+   "Name": "ArcaneMasterLoopMeshChanged",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "OnMeshChanged"
+  }, {
+   "Name": "ArcaneMasterLoopRestore",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "Restore"
+  }, {
+   "Name": "ArcaneTimeHistoryBegin",
+   "TotalCpuTime": 0.020885229110717775,
+   "TotalElapsedTime": 0.020885229110717775,
+   "NbCall": 10,
+   "Where": "ComputeLoop"
+  }, {
+   "Name": "ArcaneTimeHistoryEnd",
+   "TotalCpuTime": 0.00023245811462402344,
+   "TotalElapsedTime": 0.00023245811462402344,
+   "NbCall": 10,
+   "Where": "ComputeLoop"
+  }, {
+   "Name": "ArcaneTimeHistoryInit",
+   "TotalCpuTime": 0.0003345012664794922,
+   "TotalElapsedTime": 0.0003345012664794922,
+   "NbCall": 1,
+   "Where": "Init"
+  }, {
+   "Name": "ArcaneTimeHistoryStartInit",
+   "TotalCpuTime": 0.0002791881561279297,
+   "TotalElapsedTime": 0.0002791881561279297,
+   "NbCall": 1,
+   "Where": "StartInit"
+  }, {
+   "Name": "ArcaneTimeHistoryContinueInit",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "ContinueInit"
+  }, {
+   "Name": "ArcaneTimeHistoryStartInitEnd",
+   "TotalCpuTime": 0.000028133392333984376,
+   "TotalElapsedTime": 0.000028133392333984376,
+   "NbCall": 1,
+   "Where": "StartInit"
+  }, {
+   "Name": "ArcaneTimeHistoryRestore",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "Restore"
+  }, {
+   "Name": "MasterBuild",
+   "TotalCpuTime": 0.000025272369384765626,
+   "TotalElapsedTime": 0.000025272369384765626,
+   "NbCall": 1,
+   "Where": "Build"
+  }, {
+   "Name": "VerifierOnExit",
+   "TotalCpuTime": 0.000030517578125,
+   "TotalElapsedTime": 0.000030517578125,
+   "NbCall": 1,
+   "Where": "Exit"
+  }, {
+   "Name": "VerifierOnInit",
+   "TotalCpuTime": 0.00002384185791015625,
+   "TotalElapsedTime": 0.00002384185791015625,
+   "NbCall": 1,
+   "Where": "Init"
+  }, {
+   "Name": "SH_HydroBuild",
+   "TotalCpuTime": 0.00006389617919921875,
+   "TotalElapsedTime": 0.00006389617919921875,
+   "NbCall": 1,
+   "Where": "Build"
+  }, {
+   "Name": "SH_HydroExit",
+   "TotalCpuTime": 0.0032205581665039064,
+   "TotalElapsedTime": 0.0032205581665039064,
+   "NbCall": 1,
+   "Where": "Exit"
+  }, {
+   "Name": "SH_HydroInit",
+   "TotalCpuTime": 0.00004649162292480469,
+   "TotalElapsedTime": 0.00004649162292480469,
+   "NbCall": 1,
+   "Where": "Init"
+  }, {
+   "Name": "SH_HydroStartInit",
+   "TotalCpuTime": 1.5413479804992676,
+   "TotalElapsedTime": 1.5413479804992676,
+   "NbCall": 1,
+   "Where": "StartInit"
+  }, {
+   "Name": "SH_HydroOnMeshChanged",
+   "TotalCpuTime": 0.0,
+   "TotalElapsedTime": 0.0,
+   "NbCall": 0,
+   "Where": "OnMeshChanged"
+  }, {
+   "Name": "SH_DoOneIteration",
+   "TotalCpuTime": 22.912046670913698,
+   "TotalElapsedTime": 22.912046670913698,
+   "NbCall": 10,
+   "Where": "ComputeLoop"
+  }],
+ "VariablesStats": {
+  "Variables": [{
+    "Used": true,
+    "Name": "ArcaneProperties",
+    "DataType": "Byte",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0ChildMeshesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0ItemFamiliesKind",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 4,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 16.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0ItemFamiliesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 4,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 96.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0TiedInterfaceFaceGroups",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0TiedInterfaceItemsInfo",
+    "DataType": "Int64",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "Mesh0TiedInterfaceNodesIso",
+    "DataType": "Real2",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "CellChildFamiliesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "CellChildMeshesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyFlags",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22501,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90004.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyGroupsName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyItemNbParent",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyItemTypeId",
+    "DataType": "Int16",
+    "Dimension": 1,
+    "NbElement": 22501,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 45002.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyItemsShared",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyOwner",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22501,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90004.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyUniqueIds",
+    "DataType": "Int64",
+    "Dimension": 1,
+    "NbElement": 22501,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 180008.0
+   }, {
+    "Used": true,
+    "Name": "AdiabaticCst",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "CaracteristicLength",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "CellCQS",
+    "DataType": "Real3",
+    "Dimension": 2,
+    "NbElement": 180000,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 4320000.0
+   }, {
+    "Used": true,
+    "Name": "CellFamilyNewOwnerName",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 41,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "CellMass",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "CellViscosityForce",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "CellViscosityWork",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "CellVolume",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "Density",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "InternalEnergy",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "OldCellVolume",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "Pressure",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "Cell_SharedInfoList",
+    "DataType": "Int32",
+    "Dimension": 2,
+    "NbElement": 6,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 24.0
+   }, {
+    "Used": true,
+    "Name": "SoundSpeed",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "ViscosityWork",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": "Cell",
+    "Mesh": "Mesh0",
+    "Group": "AllCells",
+    "Property": 0,
+    "AllocatedMemory": 180000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellEdgeCellEdgeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellEdgeCellEdgeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellEdgeCellEdgeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellFaceCellFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellFaceCellFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 135006,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 540024.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellFaceCellFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellNodeCellNodeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellNodeCellNodeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 180008,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 720032.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityCellNodeCellNodeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeCellEdgeCellIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeCellEdgeCellList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeCellEdgeCellNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeFaceEdgeFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeFaceEdgeFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeFaceEdgeFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeNodeEdgeNodeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeNodeEdgeNodeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityEdgeNodeEdgeNodeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceCellFaceCellIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceCellFaceCellList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 141452,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 565808.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceCellFaceCellNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceEdgeFaceEdgeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceEdgeFaceEdgeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceEdgeFaceEdgeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceFaceFaceFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceFaceFaceFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 4,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 16.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceFaceFaceFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceNodeFaceNodeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceNodeFaceNodeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 282904,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 1131616.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityFaceNodeFaceNodeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildCellCellCellIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildCellCellCellList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildCellCellCellNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildFaceFaceFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildFaceFaceFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildFaceFaceFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildNodeNodeNodeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildNodeNodeNodeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHChildNodeNodeNodeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentCellCellCellIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentCellCellCellList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentCellCellCellNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentFaceFaceFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentFaceFaceFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentFaceFaceFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentNodeNodeNodeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentNodeNodeNodeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityHParentNodeNodeNodeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeCellNodeCellIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeCellNodeCellList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 206856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 827424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeCellNodeCellNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeEdgeNodeEdgeIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeEdgeNodeEdgeList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeEdgeNodeEdgeNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeFaceNodeFaceIndex",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeFaceNodeFaceList",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 310284,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 1241136.0
+   }, {
+    "Used": true,
+    "Name": "ConnectivityNodeFaceNodeFaceNb",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "EdgeChildFamiliesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "EdgeChildMeshesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyFlags",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyGroupsName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyItemNbParent",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyItemTypeId",
+    "DataType": "Int16",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 2.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyItemsShared",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyOwner",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 4.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyUniqueIds",
+    "DataType": "Int64",
+    "Dimension": 1,
+    "NbElement": 1,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 8.0
+   }, {
+    "Used": true,
+    "Name": "EdgeFamilyNewOwnerName",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": "Edge",
+    "Mesh": "Mesh0",
+    "Group": "AllEdges",
+    "Property": 41,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "Edge_SharedInfoList",
+    "DataType": "Int32",
+    "Dimension": 2,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "FaceChildFamiliesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "FaceChildMeshesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyFlags",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70726,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282904.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyGroupsName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyItemNbParent",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyItemTypeId",
+    "DataType": "Int16",
+    "Dimension": 1,
+    "NbElement": 70726,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 141452.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyItemsShared",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyOwner",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70726,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 282904.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyUniqueIds",
+    "DataType": "Int64",
+    "Dimension": 1,
+    "NbElement": 70726,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 565808.0
+   }, {
+    "Used": true,
+    "Name": "FaceFamilyNewOwnerName",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": "Face",
+    "Mesh": "Mesh0",
+    "Group": "AllFaces",
+    "Property": 41,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "Face_SharedInfoList",
+    "DataType": "Int32",
+    "Dimension": 2,
+    "NbElement": 6,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 24.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_CellAllCells",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 22500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 90000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_CellZD",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 11250,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 45000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_CellZD_BAS",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_CellZD_HAUT",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 11250,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 45000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_CellZG",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 11250,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 45000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_EdgeAllEdges",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceAllFaces",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 70725,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 282900.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceXMAX",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 225,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 900.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceXMIN",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 225,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 900.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceYMAX",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 6000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceYMIN",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 6000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceZMAX",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 6000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_FaceZMIN",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 1500,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 6000.0
+   }, {
+    "Used": true,
+    "Name": "GROUP_NodeAllNodes",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 72,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "NodeChildFamiliesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "NodeChildMeshesName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyFlags",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25857,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103428.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyGroupsName",
+    "DataType": "String",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyItemNbParent",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 0,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 0.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyItemTypeId",
+    "DataType": "Int16",
+    "Dimension": 1,
+    "NbElement": 25857,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 51714.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyItemsShared",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyOwner",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25857,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 103428.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyUniqueIds",
+    "DataType": "Int64",
+    "Dimension": 1,
+    "NbElement": 25857,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 64,
+    "AllocatedMemory": 206856.0
+   }, {
+    "Used": true,
+    "Name": "Force",
+    "DataType": "Real3",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": "Node",
+    "Mesh": "Mesh0",
+    "Group": "AllNodes",
+    "Property": 3,
+    "AllocatedMemory": 620544.0
+   }, {
+    "Used": true,
+    "Name": "NodeCoord",
+    "DataType": "Real3",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": "Node",
+    "Mesh": "Mesh0",
+    "Group": "AllNodes",
+    "Property": 0,
+    "AllocatedMemory": 620544.0
+   }, {
+    "Used": true,
+    "Name": "NodeFamilyNewOwnerName",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": "Node",
+    "Mesh": "Mesh0",
+    "Group": "AllNodes",
+    "Property": 41,
+    "AllocatedMemory": 103424.0
+   }, {
+    "Used": true,
+    "Name": "NodeMass",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": "Node",
+    "Mesh": "Mesh0",
+    "Group": "AllNodes",
+    "Property": 0,
+    "AllocatedMemory": 206848.0
+   }, {
+    "Used": true,
+    "Name": "Node_SharedInfoList",
+    "DataType": "Int32",
+    "Dimension": 2,
+    "NbElement": 6,
+    "ItemFamily": null,
+    "Mesh": "Mesh0",
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 24.0
+   }, {
+    "Used": true,
+    "Name": "Velocity",
+    "DataType": "Real3",
+    "Dimension": 1,
+    "NbElement": 25856,
+    "ItemFamily": "Node",
+    "Mesh": "Mesh0",
+    "Group": "AllNodes",
+    "Property": 0,
+    "AllocatedMemory": 620544.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngGlobalTime",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 11,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 0,
+    "AllocatedMemory": 88.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations0",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 11,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 44.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations1",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 40.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations2",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 40.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations3",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 40.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations4",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 40.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngIterations5",
+    "DataType": "Int32",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 40.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues0",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 11,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 88.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues1",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 80.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues2",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 80.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues3",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 80.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues4",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 80.0
+   }, {
+    "Used": true,
+    "Name": "TimeHistoryMngValues5",
+    "DataType": "Real",
+    "Dimension": 1,
+    "NbElement": 10,
+    "ItemFamily": null,
+    "Mesh": null,
+    "Group": "Alls",
+    "Property": 2336,
+    "AllocatedMemory": 80.0
+   }]
+ },
+ "TimeStats": {
+  "Version": 1,
+  "Current": {
+   "Main": {
+    "Local": "0.0167028903961182 0 0",
+    "Cumulative": "30.3635585308075 0.000192642211914062 0",
+    "SubActions": ["Init", {
+      "Local": "4.72473740577698 6.53266906738281e-05 0",
+      "Cumulative": "7.40098547935486 6.53266906738281e-05 0",
+      "SubActions": ["AllocateMesh", {
+        "Local": "0.0268363952636719 0 0",
+        "Cumulative": "0.0268363952636719 0 0"
+       }, "BuildtEntryPoints", {
+        "Local": "8.36849212646484e-05 0 0",
+        "Cumulative": "0.000164031982421875 0 0",
+        "SubActions": ["Master", {
+          "Local": "1.21593475341797e-05 0 0",
+          "Cumulative": "1.78813934326172e-05 0 0",
+          "SubActions": ["MasterBuild", {
+            "Local": "5.7220458984375e-06 0 0",
+            "Cumulative": "5.7220458984375e-06 0 0"
+           }]
+         }, "MicroHydro", {
+          "Local": "7.62939453125e-06 0 0",
+          "Cumulative": "6.24656677246094e-05 0 0",
+          "SubActions": ["SH_HydroBuild", {
+            "Local": "5.48362731933594e-05 0 0",
+            "Cumulative": "5.48362731933594e-05 0 0"
+           }]
+         }]
+       }, "CompactItemsBegin", {
+        "Local": "0.681327819824219 0 0",
+        "Cumulative": "0.681327819824219 0 0"
+       }, "CompactUpdateInternalReferences", {
+        "Local": "4.45842742919922e-05 0 0",
+        "Cumulative": "4.45842742919922e-05 0 0"
+       }, "CompactItemFinish", {
+        "Local": "0.369344472885132 0 0",
+        "Cumulative": "0.369344472885132 0 0"
+       }, "CompactItemSortReferences", {
+        "Local": "0.0487926006317139 0 0",
+        "Cumulative": "0.0487926006317139 0 0"
+       }, "CompactConnectivityData", {
+        "Local": "2.36034393310547e-05 0 0",
+        "Cumulative": "2.36034393310547e-05 0 0"
+       }, "CompactVariables", {
+        "Local": "0.0075080394744873 0 0",
+        "Cumulative": "0.0075080394744873 0 0"
+       }, "InitEntryPoints", {
+        "Local": "0.000112295150756836 0 0",
+        "Cumulative": "1.54220652580261 0 0",
+        "SubActions": ["ArcaneMasterInternal", {
+          "Local": "1.31130218505859e-05 0 0",
+          "Cumulative": "4.50611114501953e-05 0 0",
+          "SubActions": ["ArcaneMasterStartInit", {
+            "Local": "2.83718109130859e-05 0 0",
+            "Cumulative": "2.83718109130859e-05 0 0"
+           }, "ArcaneMasterInit", {
+            "Local": "3.57627868652344e-06 0 0",
+            "Cumulative": "3.57627868652344e-06 0 0"
+           }]
+         }, "TimeHistoryMng", {
+          "Local": "1.97887420654297e-05 0 0",
+          "Cumulative": "0.00063776969909668 0 0",
+          "SubActions": ["ArcaneTimeHistoryInit", {
+            "Local": "0.000326156616210938 0 0",
+            "Cumulative": "0.000326156616210938 0 0"
+           }, "ArcaneTimeHistoryStartInit", {
+            "Local": "0.000270366668701172 0 0",
+            "Cumulative": "0.000270366668701172 0 0"
+           }, "ArcaneTimeHistoryStartInitEnd", {
+            "Local": "2.14576721191406e-05 0 0",
+            "Cumulative": "2.14576721191406e-05 0 0"
+           }]
+         }, "ArcaneCeaVerifier", {
+          "Local": "9.77516174316406e-06 0 0",
+          "Cumulative": "2.19345092773438e-05 0 0",
+          "SubActions": ["VerifierOnInit", {
+            "Local": "1.21593475341797e-05 0 0",
+            "Cumulative": "1.21593475341797e-05 0 0"
+           }]
+         }, "MicroHydro", {
+          "Local": "2.14576721191406e-05 0 0",
+          "Cumulative": "1.54138946533203 0 0",
+          "SubActions": ["SH_HydroStartInit", {
+            "Local": "1.54133439064026 0 0",
+            "Cumulative": "1.54133439064026 0 0"
+           }, "SH_HydroInit", {
+            "Local": "3.36170196533203e-05 0 0",
+            "Cumulative": "3.36170196533203e-05 0 0"
+           }]
+         }]
+       }]
+     }, "Loop", {
+      "Local": "0.000371694564819336 0 0",
+      "Cumulative": "22.9405689239502 0.000127315521240234 0",
+      "SubActions": ["LoopEntryPoints", {
+        "Local": "0.000935792922973633 0 0",
+        "Cumulative": "22.9401972293854 0.000127315521240234 0",
+        "SubActions": ["ArcaneMasterInternal", {
+          "Local": "0.000130653381347656 0 0",
+          "Cumulative": "0.00626993179321289 3.4332275390625e-05 0",
+          "SubActions": ["ArcaneTimeLoopBegin", {
+            "Local": "0.00198602676391602 3.4332275390625e-05 0",
+            "Cumulative": "0.00198602676391602 3.4332275390625e-05 0"
+           }, "ArcaneTimeLoopEnd", {
+            "Local": "0.00415325164794922 0 0",
+            "Cumulative": "0.00415325164794922 0 0"
+           }]
+         }, "TimeHistoryMng", {
+          "Local": "0.00019073486328125 0 0",
+          "Cumulative": "0.0210697650909424 0 0",
+          "SubActions": ["ArcaneTimeHistoryBegin", {
+            "Local": "0.0207421779632568 0 0",
+            "Cumulative": "0.0207421779632568 0 0"
+           }, "ArcaneTimeHistoryEnd", {
+            "Local": "0.000136852264404297 0 0",
+            "Cumulative": "0.000136852264404297 0 0"
+           }]
+         }, "MicroHydro", {
+          "Local": "9.77516174316406e-05 0 0",
+          "Cumulative": "22.9119217395782 9.29832458496094e-05 0",
+          "SubActions": ["SH_DoOneIteration", {
+            "Local": "0.00100517272949219 0 0",
+            "Cumulative": "22.9118239879608 9.29832458496094e-05 0",
+            "SubActions": ["computeForces", {
+              "Local": "0.877513408660889 0 0",
+              "Cumulative": "0.877513408660889 0 0"
+             }, "computeVelocity", {
+              "Local": "0.0635499954223633 0 0",
+              "Cumulative": "0.0635499954223633 0 0"
+             }, "computeViscosityWork", {
+              "Local": "0.11960768699646 0 0",
+              "Cumulative": "0.11960768699646 0 0"
+             }, "applyBoundaryCondition", {
+              "Local": "0.0209083557128906 0 0",
+              "Cumulative": "0.0209083557128906 0 0"
+             }, "moveNodes", {
+              "Local": "0.05523681640625 0 0",
+              "Cumulative": "0.05523681640625 0 0"
+             }, "computeGeometricValues", {
+              "Local": "21.5864615440369 0 0",
+              "Cumulative": "21.5864615440369 0 0"
+             }, "updateDensity", {
+              "Local": "0.0535211563110352 5.22136688232422e-05 0",
+              "Cumulative": "0.0535211563110352 5.22136688232422e-05 0"
+             }, "applyEquationOfState", {
+              "Local": "0.102591514587402 0 0",
+              "Cumulative": "0.102591514587402 0 0"
+             }, "computeDeltaT", {
+              "Local": "0.031428337097168 4.07695770263672e-05 0",
+              "Cumulative": "0.031428337097168 4.07695770263672e-05 0"
+             }]
+           }]
+         }]
+       }]
+     }, "Exit", {
+      "Local": "0.00196504592895508 0 0",
+      "Cumulative": "0.00530123710632324 0 0",
+      "SubActions": ["ExitEntryPoints", {
+        "Local": "7.58171081542969e-05 0 0",
+        "Cumulative": "0.00333619117736816 0 0",
+        "SubActions": ["ArcaneMasterInternal", {
+          "Local": "1.00135803222656e-05 0 0",
+          "Cumulative": "1.38282775878906e-05 0 0",
+          "SubActions": ["ArcaneMasterLoopExit", {
+            "Local": "3.814697265625e-06 0 0",
+            "Cumulative": "3.814697265625e-06 0 0"
+           }]
+         }, "MicroHydro", {
+          "Local": "1.28746032714844e-05 0 0",
+          "Cumulative": "0.00321865081787109 0 0",
+          "SubActions": ["SH_HydroExit", {
+            "Local": "0.00320577621459961 0 0",
+            "Cumulative": "0.00320577621459961 0 0"
+           }]
+         }, "ArcaneCeaVerifier", {
+          "Local": "1.85966491699219e-05 0 0",
+          "Cumulative": "2.78949737548828e-05 0 0",
+          "SubActions": ["VerifierOnExit", {
+            "Local": "9.29832458496094e-06 0 0",
+            "Cumulative": "9.29832458496094e-06 0 0"
+           }]
+         }]
+       }]
+     }]
+   }
+  }
+ }
+}
+*L-Internal Properties:
+[ArcaneMeshProperties_Mesh0]
+  CartesianFirstOnwCellUniqueId = (Int64) 0
+  GlobalMeshLengthX = (Real) 1
+  GlobalMeshLengthY = (Real) 0.3
+  GlobalMeshLengthZ = (Real) 0.3
+  GlobalMeshOriginX = (Real) 1
+  GlobalMeshOriginY = (Real) 2
+  GlobalMeshOriginZ = (Real) 3
+  GlobalNbCellX = (Int64) 100
+  GlobalNbCellY = (Int64) 15
+  GlobalNbCellZ = (Int64) 15
+  NbSubDomainX = (Int32) 1
+  NbSubDomainY = (Int32) 1
+  NbSubDomainZ = (Int32) 1
+  OwnCellOffsetX = (Int64) 0
+  OwnCellOffsetY = (Int64) 0
+  OwnCellOffsetZ = (Int64) 0
+  OwnNbCellX = (Int32) 100
+  OwnNbCellY = (Int32) 15
+  OwnNbCellZ = (Int32) 15
+  SubDomainOffsetX = (Int32) 0
+  SubDomainOffsetY = (Int32) 0
+  SubDomainOffsetZ = (Int32) 0
+  compact = (Bool) 1
+  compact-after-allocate = (Bool) 1
+  display-stats = (Bool) 1
+  dump = (Bool) 1
+  ghostlayer-builder-version = (Int32) 4
+  has-itemsharedinfo-variables = (Bool) 1
+  mesh-timestamp = (Int64) 2
+  mesh-version = (Int32) 1
+  nb-ghostlayer = (Int32) 1
+  need-compact = (Bool) 0
+  part-info-nb-part = (Int32) 1
+  part-info-nb-replication = (Int32) 1
+  part-info-part-rank = (Int32) 0
+  part-info-replication-rank = (Int32) 0
+  sort = (Bool) 1
+
+[ArcaneMeshProperties_Mesh0.Cell]
+  CellEdgePreallocSize = (Int32) 0
+  CellFacePreallocSize = (Int32) 6
+  CellNodePreallocSize = (Int32) 8
+  current-change-id = (Int32) 1
+  dump-version = (Int32) 775
+  nb-item = (Int32) 22500
+
+[ArcaneMeshProperties_Mesh0.Edge]
+  current-change-id = (Int32) 1
+  dump-version = (Int32) 775
+  nb-item = (Int32) 0
+
+[ArcaneMeshProperties_Mesh0.Face]
+  FaceCellPreallocSize = (Int32) 2
+  FaceFacePreallocSize = (Int32) 4
+  FaceNodePreallocSize = (Int32) 4
+  current-change-id = (Int32) 1
+  dump-version = (Int32) 775
+  nb-item = (Int32) 70725
+
+[ArcaneMeshProperties_Mesh0.Node]
+  NodeCellPreallocSize = (Int32) 8
+  NodeFacePreallocSize = (Int32) 12
+  current-change-id = (Int32) 1
+  dump-version = (Int32) 775
+  nb-item = (Int32) 25856
+
+[ArcaneTimeHistoryProperties]
+
+[MessagePassingStats]
+
+[TimeStats]
+
+
+*L-Internal 
+Memory statistics for variables:
+ Number of created variables:              189
+ Number of created variables reference:    0
+ Number of currently allocated variables:  187
+ Number of currently reference:            0
+Var: <ArcaneProperties> Kind=None Mem=0
+Var: <Mesh0ChildMeshesName> Kind=None Mem=0
+Var: <Mesh0ItemFamiliesKind> Kind=None Mem=16
+Var: <Mesh0ItemFamiliesName> Kind=None Mem=96
+Var: <Mesh0TiedInterfaceFaceGroups> Kind=None Mem=0
+Var: <Mesh0TiedInterfaceItemsInfo> Kind=None Mem=0
+Var: <Mesh0TiedInterfaceNodesIso> Kind=None Mem=0
+Var: <CellChildFamiliesName> Kind=None Mem=0
+Var: <CellChildMeshesName> Kind=None Mem=0
+Var: <CellFamilyFlags> Kind=None Mem=90004
+Var: <CellFamilyGroupsName> Kind=None Mem=0
+Var: <CellFamilyItemNbParent> Kind=None Mem=0
+Var: <CellFamilyItemTypeId> Kind=None Mem=45002
+Var: <CellFamilyItemsShared> Kind=None Mem=90000
+Var: <CellFamilyOwner> Kind=None Mem=90004
+Var: <CellFamilyUniqueIds> Kind=None Mem=180008
+Var: <AdiabaticCst> Kind=Cell Mem=180000
+Var: <CaracteristicLength> Kind=Cell Mem=180000
+Var: <CellCQS> Kind=Cell Mem=4320000
+Var: <CellFamilyNewOwnerName> Kind=Cell Mem=90000
+Var: <CellMass> Kind=Cell Mem=180000
+Var: <CellViscosityForce> Kind=Cell Mem=180000
+Var: <CellViscosityWork> Kind=Cell Mem=180000
+Var: <CellVolume> Kind=Cell Mem=180000
+Var: <Density> Kind=Cell Mem=180000
+Var: <InternalEnergy> Kind=Cell Mem=180000
+Var: <OldCellVolume> Kind=Cell Mem=180000
+Var: <Pressure> Kind=Cell Mem=180000
+Var: <Cell_SharedInfoList> Kind=None Mem=24
+Var: <SoundSpeed> Kind=Cell Mem=180000
+Var: <ViscosityWork> Kind=Cell Mem=180000
+Var: <ConnectivityCellEdgeCellEdgeIndex> Kind=None Mem=90000
+Var: <ConnectivityCellEdgeCellEdgeList> Kind=None Mem=4
+Var: <ConnectivityCellEdgeCellEdgeNb> Kind=None Mem=90000
+Var: <ConnectivityCellFaceCellFaceIndex> Kind=None Mem=90000
+Var: <ConnectivityCellFaceCellFaceList> Kind=None Mem=540024
+Var: <ConnectivityCellFaceCellFaceNb> Kind=None Mem=90000
+Var: <ConnectivityCellNodeCellNodeIndex> Kind=None Mem=90000
+Var: <ConnectivityCellNodeCellNodeList> Kind=None Mem=720032
+Var: <ConnectivityCellNodeCellNodeNb> Kind=None Mem=90000
+Var: <ConnectivityEdgeCellEdgeCellIndex> Kind=None Mem=0
+Var: <ConnectivityEdgeCellEdgeCellList> Kind=None Mem=4
+Var: <ConnectivityEdgeCellEdgeCellNb> Kind=None Mem=0
+Var: <ConnectivityEdgeFaceEdgeFaceIndex> Kind=None Mem=0
+Var: <ConnectivityEdgeFaceEdgeFaceList> Kind=None Mem=4
+Var: <ConnectivityEdgeFaceEdgeFaceNb> Kind=None Mem=0
+Var: <ConnectivityEdgeNodeEdgeNodeIndex> Kind=None Mem=0
+Var: <ConnectivityEdgeNodeEdgeNodeList> Kind=None Mem=4
+Var: <ConnectivityEdgeNodeEdgeNodeNb> Kind=None Mem=0
+Var: <ConnectivityFaceCellFaceCellIndex> Kind=None Mem=282900
+Var: <ConnectivityFaceCellFaceCellList> Kind=None Mem=565808
+Var: <ConnectivityFaceCellFaceCellNb> Kind=None Mem=282900
+Var: <ConnectivityFaceEdgeFaceEdgeIndex> Kind=None Mem=282900
+Var: <ConnectivityFaceEdgeFaceEdgeList> Kind=None Mem=4
+Var: <ConnectivityFaceEdgeFaceEdgeNb> Kind=None Mem=282900
+Var: <ConnectivityFaceFaceFaceFaceIndex> Kind=None Mem=282900
+Var: <ConnectivityFaceFaceFaceFaceList> Kind=None Mem=16
+Var: <ConnectivityFaceFaceFaceFaceNb> Kind=None Mem=282900
+Var: <ConnectivityFaceNodeFaceNodeIndex> Kind=None Mem=282900
+Var: <ConnectivityFaceNodeFaceNodeList> Kind=None Mem=1131616
+Var: <ConnectivityFaceNodeFaceNodeNb> Kind=None Mem=282900
+Var: <ConnectivityHChildCellCellCellIndex> Kind=None Mem=90000
+Var: <ConnectivityHChildCellCellCellList> Kind=None Mem=4
+Var: <ConnectivityHChildCellCellCellNb> Kind=None Mem=90000
+Var: <ConnectivityHChildFaceFaceFaceIndex> Kind=None Mem=282900
+Var: <ConnectivityHChildFaceFaceFaceList> Kind=None Mem=4
+Var: <ConnectivityHChildFaceFaceFaceNb> Kind=None Mem=282900
+Var: <ConnectivityHChildNodeNodeNodeIndex> Kind=None Mem=103424
+Var: <ConnectivityHChildNodeNodeNodeList> Kind=None Mem=4
+Var: <ConnectivityHChildNodeNodeNodeNb> Kind=None Mem=103424
+Var: <ConnectivityHParentCellCellCellIndex> Kind=None Mem=90000
+Var: <ConnectivityHParentCellCellCellList> Kind=None Mem=4
+Var: <ConnectivityHParentCellCellCellNb> Kind=None Mem=90000
+Var: <ConnectivityHParentFaceFaceFaceIndex> Kind=None Mem=282900
+Var: <ConnectivityHParentFaceFaceFaceList> Kind=None Mem=4
+Var: <ConnectivityHParentFaceFaceFaceNb> Kind=None Mem=282900
+Var: <ConnectivityHParentNodeNodeNodeIndex> Kind=None Mem=103424
+Var: <ConnectivityHParentNodeNodeNodeList> Kind=None Mem=4
+Var: <ConnectivityHParentNodeNodeNodeNb> Kind=None Mem=103424
+Var: <ConnectivityNodeCellNodeCellIndex> Kind=None Mem=103424
+Var: <ConnectivityNodeCellNodeCellList> Kind=None Mem=827424
+Var: <ConnectivityNodeCellNodeCellNb> Kind=None Mem=103424
+Var: <ConnectivityNodeEdgeNodeEdgeIndex> Kind=None Mem=103424
+Var: <ConnectivityNodeEdgeNodeEdgeList> Kind=None Mem=4
+Var: <ConnectivityNodeEdgeNodeEdgeNb> Kind=None Mem=103424
+Var: <ConnectivityNodeFaceNodeFaceIndex> Kind=None Mem=103424
+Var: <ConnectivityNodeFaceNodeFaceList> Kind=None Mem=1241136
+Var: <ConnectivityNodeFaceNodeFaceNb> Kind=None Mem=103424
+Var: <EdgeChildFamiliesName> Kind=None Mem=0
+Var: <EdgeChildMeshesName> Kind=None Mem=0
+Var: <EdgeFamilyFlags> Kind=None Mem=4
+Var: <EdgeFamilyGroupsName> Kind=None Mem=0
+Var: <EdgeFamilyItemNbParent> Kind=None Mem=0
+Var: <EdgeFamilyItemTypeId> Kind=None Mem=2
+Var: <EdgeFamilyItemsShared> Kind=None Mem=0
+Var: <EdgeFamilyOwner> Kind=None Mem=4
+Var: <EdgeFamilyUniqueIds> Kind=None Mem=8
+Var: <EdgeFamilyNewOwnerName> Kind=Edge Mem=0
+Var: <Edge_SharedInfoList> Kind=None Mem=0
+Var: <FaceChildFamiliesName> Kind=None Mem=0
+Var: <FaceChildMeshesName> Kind=None Mem=0
+Var: <FaceFamilyFlags> Kind=None Mem=282904
+Var: <FaceFamilyGroupsName> Kind=None Mem=0
+Var: <FaceFamilyItemNbParent> Kind=None Mem=0
+Var: <FaceFamilyItemTypeId> Kind=None Mem=141452
+Var: <FaceFamilyItemsShared> Kind=None Mem=282900
+Var: <FaceFamilyOwner> Kind=None Mem=282904
+Var: <FaceFamilyUniqueIds> Kind=None Mem=565808
+Var: <FaceFamilyNewOwnerName> Kind=Face Mem=282900
+Var: <Face_SharedInfoList> Kind=None Mem=24
+Var: <GROUP_CellAllCells> Kind=None Mem=90000
+Var: <GROUP_CellZD> Kind=None Mem=45000
+Var: <GROUP_CellZD_BAS> Kind=None Mem=0
+Var: <GROUP_CellZD_HAUT> Kind=None Mem=45000
+Var: <GROUP_CellZG> Kind=None Mem=45000
+Var: <GROUP_EdgeAllEdges> Kind=None Mem=0
+Var: <GROUP_FaceAllFaces> Kind=None Mem=282900
+Var: <GROUP_FaceXMAX> Kind=None Mem=900
+Var: <GROUP_FaceXMIN> Kind=None Mem=900
+Var: <GROUP_FaceYMAX> Kind=None Mem=6000
+Var: <GROUP_FaceYMIN> Kind=None Mem=6000
+Var: <GROUP_FaceZMAX> Kind=None Mem=6000
+Var: <GROUP_FaceZMIN> Kind=None Mem=6000
+Var: <GROUP_NodeAllNodes> Kind=None Mem=103424
+Var: <NodeChildFamiliesName> Kind=None Mem=0
+Var: <NodeChildMeshesName> Kind=None Mem=0
+Var: <NodeFamilyFlags> Kind=None Mem=103428
+Var: <NodeFamilyGroupsName> Kind=None Mem=0
+Var: <NodeFamilyItemNbParent> Kind=None Mem=0
+Var: <NodeFamilyItemTypeId> Kind=None Mem=51714
+Var: <NodeFamilyItemsShared> Kind=None Mem=103424
+Var: <NodeFamilyOwner> Kind=None Mem=103428
+Var: <NodeFamilyUniqueIds> Kind=None Mem=206856
+Var: <Force> Kind=Node Mem=620544
+Var: <NodeCoord> Kind=Node Mem=620544
+Var: <NodeFamilyNewOwnerName> Kind=Node Mem=103424
+Var: <NodeMass> Kind=Node Mem=206848
+Var: <Node_SharedInfoList> Kind=None Mem=24
+Var: <Velocity> Kind=Node Mem=620544
+Var: <TimeHistoryMngGlobalTime> Kind=None Mem=88
+Var: <TimeHistoryMngIterations0> Kind=None Mem=44
+Var: <TimeHistoryMngIterations1> Kind=None Mem=40
+Var: <TimeHistoryMngIterations2> Kind=None Mem=40
+Var: <TimeHistoryMngIterations3> Kind=None Mem=40
+Var: <TimeHistoryMngIterations4> Kind=None Mem=40
+Var: <TimeHistoryMngIterations5> Kind=None Mem=40
+Var: <TimeHistoryMngValues0> Kind=None Mem=88
+Var: <TimeHistoryMngValues1> Kind=None Mem=80
+Var: <TimeHistoryMngValues2> Kind=None Mem=80
+Var: <TimeHistoryMngValues3> Kind=None Mem=80
+Var: <TimeHistoryMngValues4> Kind=None Mem=80
+Var: <TimeHistoryMngValues5> Kind=None Mem=80
+Memory repartition by module:
+                                                    Memory (Mo)                   Memory (Ko)
+                        Module   Nvar     Private      Shared       Total      %     per cell
+
+Var: <TimeHistoryMngGlobalTime> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ArcaneProperties> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0ItemFamiliesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0ItemFamiliesKind> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0ChildMeshesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Node_SharedInfoList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Edge_SharedInfoList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Face_SharedInfoList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Cell_SharedInfoList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0TiedInterfaceItemsInfo> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0TiedInterfaceNodesIso> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <Mesh0TiedInterfaceFaceGroups> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_NodeAllNodes> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyItemsShared> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyUniqueIds> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyOwner> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyFlags> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyItemTypeId> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyItemNbParent> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyGroupsName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeFamilyNewOwnerName> Kind=Node Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeChildMeshesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeChildFamiliesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeEdgeNodeEdgeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeEdgeNodeEdgeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeEdgeNodeEdgeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeFaceNodeFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeFaceNodeFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeFaceNodeFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeCellNodeCellNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeCellNodeCellIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityNodeCellNodeCellList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentNodeNodeNodeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentNodeNodeNodeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentNodeNodeNodeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildNodeNodeNodeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildNodeNodeNodeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildNodeNodeNodeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_EdgeAllEdges> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyItemsShared> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyUniqueIds> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyOwner> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyFlags> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyItemTypeId> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyItemNbParent> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyGroupsName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeFamilyNewOwnerName> Kind=Edge Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeChildMeshesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <EdgeChildFamiliesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeNodeEdgeNodeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeNodeEdgeNodeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeNodeEdgeNodeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeFaceEdgeFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeFaceEdgeFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeFaceEdgeFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeCellEdgeCellNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeCellEdgeCellIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityEdgeCellEdgeCellList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceAllFaces> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyItemsShared> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyUniqueIds> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyOwner> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyFlags> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyItemTypeId> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyItemNbParent> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyGroupsName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceFamilyNewOwnerName> Kind=Face Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceChildMeshesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <FaceChildFamiliesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceNodeFaceNodeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceNodeFaceNodeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceNodeFaceNodeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceEdgeFaceEdgeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceEdgeFaceEdgeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceEdgeFaceEdgeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceFaceFaceFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceFaceFaceFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceFaceFaceFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceCellFaceCellNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceCellFaceCellIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityFaceCellFaceCellList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentFaceFaceFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentFaceFaceFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentFaceFaceFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildFaceFaceFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildFaceFaceFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildFaceFaceFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_CellAllCells> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyItemsShared> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyUniqueIds> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyOwner> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyFlags> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyItemTypeId> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyItemNbParent> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyGroupsName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellFamilyNewOwnerName> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <CellChildMeshesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <CellChildFamiliesName> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellNodeCellNodeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellNodeCellNodeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellNodeCellNodeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellEdgeCellEdgeNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellEdgeCellEdgeIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellEdgeCellEdgeList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellFaceCellFaceNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellFaceCellFaceIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityCellFaceCellFaceList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentCellCellCellNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentCellCellCellIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHParentCellCellCellList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildCellCellCellNb> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildCellCellCellIndex> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <ConnectivityHChildCellCellCellList> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceYMAX> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceZMIN> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceZMAX> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_CellZD> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_CellZD_BAS> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_CellZD_HAUT> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceXMIN> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceXMAX> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_CellZG> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <GROUP_FaceYMIN> Kind=None Mem=0x7fff8dbc07e0 private?=1
+                          None    123      14.088       0.000      14.088   62.2%        0.62
+Var: <TimeHistoryMngValues1> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations4> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngValues5> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations5> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations1> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngValues2> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations2> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngValues3> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations3> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngValues4> Kind=None Mem=0x7fff8dbc07e0 private?=1
+          ArcaneMasterInternal     10       0.000       0.000       0.000    0.0%        0.00
+Var: <TimeHistoryMngValues0> Kind=None Mem=0x7fff8dbc07e0 private?=1
+Var: <TimeHistoryMngIterations0> Kind=None Mem=0x7fff8dbc07e0 private?=1
+                TimeHistoryMng      2       0.000       0.000       0.000    0.0%        0.00
+Var: <CellMass> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <Density> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <Pressure> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <InternalEnergy> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <CellVolume> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <OldCellVolume> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <CellViscosityForce> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <CellViscosityWork> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <Force> Kind=Node Mem=0x7fff8dbc07e0 private?=1
+Var: <Velocity> Kind=Node Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeMass> Kind=Node Mem=0x7fff8dbc07e0 private?=1
+Var: <AdiabaticCst> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <CaracteristicLength> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <SoundSpeed> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <NodeCoord> Kind=Node Mem=0x7fff8dbc07e0 private?=0
+Var: <CellCQS> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+Var: <ViscosityWork> Kind=Cell Mem=0x7fff8dbc07e0 private?=1
+                    MicroHydro     17       7.927       0.620       8.548   37.7%        0.37
+
+                         TOTAL    152                              22.637                1.00
+Variable Node N=5 Mémoire=2171904
+Variable Edge N=1 Mémoire=0
+Variable Face N=1 Mémoire=282900
+Variable Cell N=14 Mémoire=6570000
+Variable DoF N=0 Mémoire=0
+Variable Particle N=0 Mémoire=0
+Variable Particle N=0 Mémoire=0
+Variable Link N=0 Mémoire=0
+Variable Array N=131 Mémoire=13613126
+Variable Total N=152 Mémoire=22637930
+
+Biggest variables (D=Dump, E=Exchange R=Restore):
+                                     Variable      Kind     Memory (Ko)  per cell (o)  D E R
+
+                                      CellCQS      Cell      4320.000       192.0      X X X 
+             ConnectivityNodeFaceNodeFaceList      None      1241.136        55.1      X   X 
+             ConnectivityFaceNodeFaceNodeList      None      1131.616        50.2      X   X 
+             ConnectivityNodeCellNodeCellList      None       827.424        36.7      X   X 
+             ConnectivityCellNodeCellNodeList      None       720.032        32.0      X   X 
+                                    NodeCoord      Node       620.544        27.5      X X X 
+                                        Force      Node       620.544        27.5        X X 
+                                     Velocity      Node       620.544        27.5      X X X 
+                          FaceFamilyUniqueIds      None       565.808        25.1      X   X 
+             ConnectivityFaceCellFaceCellList      None       565.808        25.1      X   X 
+             ConnectivityCellFaceCellFaceList      None       540.024        24.0      X   X 
+                              FaceFamilyFlags      None       282.904        12.5      X   X 
+                              FaceFamilyOwner      None       282.904        12.5      X   X 
+             ConnectivityHChildFaceFaceFaceNb      None       282.900        12.5      X   X 
+            ConnectivityHParentFaceFaceFaceNb      None       282.900        12.5      X   X 
+                       FaceFamilyNewOwnerName      Face       282.900        12.5        X X 
+            ConnectivityFaceCellFaceCellIndex      None       282.900        12.5      X   X 
+               ConnectivityFaceCellFaceCellNb      None       282.900        12.5      X   X 
+            ConnectivityFaceEdgeFaceEdgeIndex      None       282.900        12.5      X   X 
+               ConnectivityFaceEdgeFaceEdgeNb      None       282.900        12.5      X   X 
+                        FaceFamilyItemsShared      None       282.900        12.5      X   X 
+            ConnectivityFaceFaceFaceFaceIndex      None       282.900        12.5      X   X 
+               ConnectivityFaceFaceFaceFaceNb      None       282.900        12.5      X   X 
+            ConnectivityFaceNodeFaceNodeIndex      None       282.900        12.5      X   X 
+               ConnectivityFaceNodeFaceNodeNb      None       282.900        12.5      X   X 
+          ConnectivityHChildFaceFaceFaceIndex      None       282.900        12.5      X   X 
+                           GROUP_FaceAllFaces      None       282.900        12.5      X   X 
+         ConnectivityHParentFaceFaceFaceIndex      None       282.900        12.5      X   X 
+                          NodeFamilyUniqueIds      None       206.856         9.1      X   X 
+                                     NodeMass      Node       206.848         9.1      X X X 
+                          CellFamilyUniqueIds      None       180.008         8.0      X   X 
+                                ViscosityWork      Cell       180.000         8.0      X X X 
+                          CaracteristicLength      Cell       180.000         8.0      X X X 
+                                     CellMass      Cell       180.000         8.0      X X X 
+                           CellViscosityForce      Cell       180.000         8.0      X X X 
+                            CellViscosityWork      Cell       180.000         8.0      X X X 
+                                   CellVolume      Cell       180.000         8.0      X X X 
+                                      Density      Cell       180.000         8.0      X X X 
+                                 AdiabaticCst      Cell       180.000         8.0      X X X 
+                               InternalEnergy      Cell       180.000         8.0      X X X 
+                                OldCellVolume      Cell       180.000         8.0      X X X 
+                                     Pressure      Cell       180.000         8.0      X X X 
+                                   SoundSpeed      Cell       180.000         8.0      X X X 
+                         FaceFamilyItemTypeId      None       141.452         6.2      X   X 
+                              NodeFamilyOwner      None       103.428         4.5      X   X 
+                              NodeFamilyFlags      None       103.428         4.5      X   X 
+             ConnectivityHChildNodeNodeNodeNb      None       103.424         4.5      X   X 
+          ConnectivityHChildNodeNodeNodeIndex      None       103.424         4.5      X   X 
+                       NodeFamilyNewOwnerName      Node       103.424         4.5        X X 
+               ConnectivityNodeFaceNodeFaceNb      None       103.424         4.5      X   X 
+               ConnectivityNodeCellNodeCellNb      None       103.424         4.5      X   X 
+         ConnectivityHParentNodeNodeNodeIndex      None       103.424         4.5      X   X 
+            ConnectivityHParentNodeNodeNodeNb      None       103.424         4.5      X   X 
+            ConnectivityNodeCellNodeCellIndex      None       103.424         4.5      X   X 
+            ConnectivityNodeEdgeNodeEdgeIndex      None       103.424         4.5      X   X 
+               ConnectivityNodeEdgeNodeEdgeNb      None       103.424         4.5      X   X 
+            ConnectivityNodeFaceNodeFaceIndex      None       103.424         4.5      X   X 
+                           GROUP_NodeAllNodes      None       103.424         4.5      X   X 
+                        NodeFamilyItemsShared      None       103.424         4.5      X   X 
+                              CellFamilyOwner      None        90.004         4.0      X   X 
+                              CellFamilyFlags      None        90.004         4.0      X   X 
+            ConnectivityCellEdgeCellEdgeIndex      None        90.000         4.0      X   X 
+                       CellFamilyNewOwnerName      Cell        90.000         4.0        X X 
+               ConnectivityCellEdgeCellEdgeNb      None        90.000         4.0      X   X 
+                           GROUP_CellAllCells      None        90.000         4.0      X   X 
+            ConnectivityCellFaceCellFaceIndex      None        90.000         4.0      X   X 
+               ConnectivityCellFaceCellFaceNb      None        90.000         4.0      X   X 
+            ConnectivityCellNodeCellNodeIndex      None        90.000         4.0      X   X 
+            ConnectivityHParentCellCellCellNb      None        90.000         4.0      X   X 
+         ConnectivityHParentCellCellCellIndex      None        90.000         4.0      X   X 
+               ConnectivityCellNodeCellNodeNb      None        90.000         4.0      X   X 
+             ConnectivityHChildCellCellCellNb      None        90.000         4.0      X   X 
+          ConnectivityHChildCellCellCellIndex      None        90.000         4.0      X   X 
+                        CellFamilyItemsShared      None        90.000         4.0      X   X 
+                         NodeFamilyItemTypeId      None        51.714         2.2      X   X 
+                         CellFamilyItemTypeId      None        45.002         2.0      X   X 
+                            GROUP_CellZD_HAUT      None        45.000         2.0      X   X 
+                                 GROUP_CellZG      None        45.000         2.0      X   X 
+                                 GROUP_CellZD      None        45.000         2.0      X   X 
+                               GROUP_FaceZMIN      None         6.000         0.2      X   X 
+                               GROUP_FaceYMAX      None         6.000         0.2      X   X 
+                               GROUP_FaceYMIN      None         6.000         0.2      X   X 
+                               GROUP_FaceZMAX      None         6.000         0.2      X   X 
+                               GROUP_FaceXMAX      None         0.900         0.0      X   X 
+                               GROUP_FaceXMIN      None         0.900         0.0      X   X 
+                        Mesh0ItemFamiliesName      None         0.096         0.0      X   X 
+                     TimeHistoryMngGlobalTime      None         0.088         0.0      X   X 
+                        TimeHistoryMngValues0      None         0.088         0.0      X     
+                        TimeHistoryMngValues5      None         0.080         0.0      X     
+                        TimeHistoryMngValues1      None         0.080         0.0      X     
+                        TimeHistoryMngValues2      None         0.080         0.0      X     
+                        TimeHistoryMngValues3      None         0.080         0.0      X     
+                        TimeHistoryMngValues4      None         0.080         0.0      X     
+                    TimeHistoryMngIterations0      None         0.044         0.0      X     
+                    TimeHistoryMngIterations4      None         0.040         0.0      X     
+                    TimeHistoryMngIterations1      None         0.040         0.0      X     
+                    TimeHistoryMngIterations2      None         0.040         0.0      X     
+                    TimeHistoryMngIterations3      None         0.040         0.0      X     
+                    TimeHistoryMngIterations5      None         0.040         0.0      X     
+                          Node_SharedInfoList      None         0.024         0.0      X   X 
+                          Cell_SharedInfoList      None         0.024         0.0      X   X 
+                          Face_SharedInfoList      None         0.024         0.0      X   X 
+                        Mesh0ItemFamiliesKind      None         0.016         0.0      X   X 
+             ConnectivityFaceFaceFaceFaceList      None         0.016         0.0      X   X 
+                          EdgeFamilyUniqueIds      None         0.008         0.0      X   X 
+             ConnectivityEdgeNodeEdgeNodeList      None         0.004         0.0      X   X 
+             ConnectivityFaceEdgeFaceEdgeList      None         0.004         0.0      X   X 
+             ConnectivityEdgeCellEdgeCellList      None         0.004         0.0      X   X 
+             ConnectivityEdgeFaceEdgeFaceList      None         0.004         0.0      X   X 
+           ConnectivityHChildCellCellCellList      None         0.004         0.0      X   X 
+           ConnectivityHChildFaceFaceFaceList      None         0.004         0.0      X   X 
+           ConnectivityHChildNodeNodeNodeList      None         0.004         0.0      X   X 
+             ConnectivityCellEdgeCellEdgeList      None         0.004         0.0      X   X 
+          ConnectivityHParentFaceFaceFaceList      None         0.004         0.0      X   X 
+                              EdgeFamilyOwner      None         0.004         0.0      X   X 
+          ConnectivityHParentNodeNodeNodeList      None         0.004         0.0      X   X 
+             ConnectivityNodeEdgeNodeEdgeList      None         0.004         0.0      X   X 
+                              EdgeFamilyFlags      None         0.004         0.0      X   X 
+          ConnectivityHParentCellCellCellList      None         0.004         0.0      X   X 
+                         EdgeFamilyItemTypeId      None         0.002         0.0      X   X 
+                          CellChildMeshesName      None         0.000         0.0      X   X 
+                  Mesh0TiedInterfaceItemsInfo      None         0.000         0.0      X   X 
+                   Mesh0TiedInterfaceNodesIso      None         0.000         0.0      X   X 
+                 Mesh0TiedInterfaceFaceGroups      None         0.000         0.0      X   X 
+                         CellFamilyGroupsName      None         0.000         0.0      X   X 
+                       CellFamilyItemNbParent      None         0.000         0.0      X   X 
+                         Mesh0ChildMeshesName      None         0.000         0.0      X   X 
+                        CellChildFamiliesName      None         0.000         0.0      X   X 
+                             ArcaneProperties      None         0.000         0.0      X   X 
+            ConnectivityEdgeCellEdgeCellIndex      None         0.000         0.0      X   X 
+            ConnectivityEdgeNodeEdgeNodeIndex      None         0.000         0.0      X   X 
+                        EdgeChildFamiliesName      None         0.000         0.0      X   X 
+                        EdgeFamilyItemsShared      None         0.000         0.0      X   X 
+                       EdgeFamilyNewOwnerName      Edge         0.000         0.0        X X 
+                          Edge_SharedInfoList      None         0.000         0.0      X   X 
+                        FaceChildFamiliesName      None         0.000         0.0      X   X 
+                          FaceChildMeshesName      None         0.000         0.0      X   X 
+                       EdgeFamilyItemNbParent      None         0.000         0.0      X   X 
+                         FaceFamilyGroupsName      None         0.000         0.0      X   X 
+                       FaceFamilyItemNbParent      None         0.000         0.0      X   X 
+                         EdgeFamilyGroupsName      None         0.000         0.0      X   X 
+                          EdgeChildMeshesName      None         0.000         0.0      X   X 
+               ConnectivityEdgeCellEdgeCellNb      None         0.000         0.0      X   X 
+                             GROUP_CellZD_BAS      None         0.000         0.0      X   X 
+                           GROUP_EdgeAllEdges      None         0.000         0.0      X   X 
+               ConnectivityEdgeNodeEdgeNodeNb      None         0.000         0.0      X   X 
+               ConnectivityEdgeFaceEdgeFaceNb      None         0.000         0.0      X   X 
+                        NodeChildFamiliesName      None         0.000         0.0      X   X 
+                          NodeChildMeshesName      None         0.000         0.0      X   X 
+                         NodeFamilyGroupsName      None         0.000         0.0      X   X 
+                       NodeFamilyItemNbParent      None         0.000         0.0      X   X 
+            ConnectivityEdgeFaceEdgeFaceIndex      None         0.000         0.0      X   X 
+
+*L-Internal Execution statistics (current execution)
+-- Execution statistics (current execution) (divide=225000, nb_loop=10) (clock time):
+                                     Action            Time       Time         N
+                                                     Total(s)  /cell(us)
+
+ Main                                                 30.367    134.968        0 100.0 100.0 [ 99.9   0.0   0.0]
+  Init                                                 7.401     32.893        1  24.3  24.3 [ 99.9   0.0   0.0]
+   AllocateMesh                                        0.026      0.119        1   0.0   0.3 [100.0   0.0   0.0]
+   BuildtEntryPoints                                   0.000      0.000        1   0.0   0.0 [100.0   0.0   0.0]
+    Master                                             0.000      0.000        1   0.0  10.9 [100.0   0.0   0.0]
+     MasterBuild                                       0.000      0.000        1   0.0  32.0 [100.0   0.0   0.0]
+    MicroHydro                                         0.000      0.000        1   0.0  38.0 [100.0   0.0   0.0]
+     SH_HydroBuild                                     0.000      0.000        1   0.0  87.7 [100.0   0.0   0.0]
+   CompactItemsBegin                                   0.681      3.028        4   2.2   9.2 [100.0   0.0   0.0]
+   CompactUpdateInternalReferences                     0.000      0.000        4   0.0   0.0 [100.0   0.0   0.0]
+   CompactItemFinish                                   0.369      1.641        8   1.2   4.9 [100.0   0.0   0.0]
+   CompactItemSortReferences                           0.048      0.216        1   0.1   0.6 [100.0   0.0   0.0]
+   CompactConnectivityData                             0.000      0.000        1   0.0   0.0 [100.0   0.0   0.0]
+   CompactVariables                                    0.007      0.033        3   0.0   0.1 [100.0   0.0   0.0]
+   InitEntryPoints                                     1.542      6.854        1   5.0  20.8 [100.0   0.0   0.0]
+    ArcaneMasterInternal                               0.000      0.000        2   0.0   0.0 [100.0   0.0   0.0]
+     ArcaneMasterStartInit                             0.000      0.000        1   0.0  62.9 [100.0   0.0   0.0]
+     ArcaneMasterInit                                  0.000      0.000        1   0.0   7.9 [100.0   0.0   0.0]
+    TimeHistoryMng                                     0.000      0.002        3   0.0   0.0 [100.0   0.0   0.0]
+     ArcaneTimeHistoryInit                             0.000      0.001        1   0.0  51.1 [100.0   0.0   0.0]
+     ArcaneTimeHistoryStartInit                        0.000      0.001        1   0.0  42.3 [100.0   0.0   0.0]
+     ArcaneTimeHistoryStartInitEnd                     0.000      0.000        1   0.0   3.3 [100.0   0.0   0.0]
+    ArcaneCeaVerifier                                  0.000      0.000        1   0.0   0.0 [100.0   0.0   0.0]
+     VerifierOnInit                                    0.000      0.000        1   0.0  55.4 [100.0   0.0   0.0]
+    MicroHydro                                         1.541      6.850        2   5.0  99.9 [100.0   0.0   0.0]
+     SH_HydroStartInit                                 1.541      6.850        1   5.0  99.9 [100.0   0.0   0.0]
+     SH_HydroInit                                      0.000      0.000        1   0.0   0.0 [100.0   0.0   0.0]
+  Loop                                                22.940    101.958        1  75.5  75.5 [ 99.9   0.0   0.0]
+   LoopEntryPoints                                    22.940    101.956       10  75.5  99.9 [ 99.9   0.0   0.0]
+    ArcaneMasterInternal                               0.006      0.028       20   0.0   0.0 [ 99.4   0.5   0.0]
+     ArcaneTimeLoopBegin                               0.002      0.008       10   0.0  32.0 [ 98.3   1.6   0.0]
+     ArcaneTimeLoopEnd                                 0.004      0.018       10   0.0  65.8 [100.0   0.0   0.0]
+    TimeHistoryMng                                     0.021      0.093       20   0.0   0.0 [100.0   0.0   0.0]
+     ArcaneTimeHistoryBegin                            0.020      0.092       10   0.0  98.4 [100.0   0.0   0.0]
+     ArcaneTimeHistoryEnd                              0.000      0.000       10   0.0   0.6 [100.0   0.0   0.0]
+    MicroHydro                                        22.912    101.831       10  75.4  99.8 [ 99.9   0.0   0.0]
+     SH_DoOneIteration                                22.911    101.830       10  75.4  99.9 [ 99.9   0.0   0.0]
+      computeForces                                    0.877      3.900       10   2.8   3.8 [100.0   0.0   0.0]
+      computeVelocity                                  0.063      0.282       10   0.2   0.2 [100.0   0.0   0.0]
+      computeViscosityWork                             0.119      0.531       10   0.3   0.5 [100.0   0.0   0.0]
+      applyBoundaryCondition                           0.020      0.092       10   0.0   0.0 [100.0   0.0   0.0]
+      moveNodes                                        0.055      0.245       10   0.1   0.2 [100.0   0.0   0.0]
+      computeGeometricValues                          21.586     95.939       10  71.0  94.2 [100.0   0.0   0.0]
+      updateDensity                                    0.053      0.238       10   0.1   0.2 [ 99.9   0.0   0.0]
+      applyEquationOfState                             0.102      0.455       10   0.3   0.4 [100.0   0.0   0.0]
+      computeDeltaT                                    0.031      0.139       10   0.1   0.1 [ 99.8   0.1   0.0]
+  Exit                                                 0.009      0.041        1   0.0   0.0 [100.0   0.0   0.0]
+   ExitEntryPoints                                     0.007      0.032        1   0.0  78.9 [100.0   0.0   0.0]
+    ArcaneMasterInternal                               0.000      0.000        1   0.0   0.1 [100.0   0.0   0.0]
+     ArcaneMasterLoopExit                              0.000      0.000        1   0.0  27.5 [100.0   0.0   0.0]
+    MicroHydro                                         0.003      0.014        1   0.0  43.4 [100.0   0.0   0.0]
+     SH_HydroExit                                      0.003      0.014        1   0.0  99.6 [100.0   0.0   0.0]
+    ArcaneCeaVerifier                                  0.000      0.000        1   0.0   0.3 [100.0   0.0   0.0]
+     VerifierOnExit                                    0.000      0.000        1   0.0  33.3 [100.0   0.0   0.0]
+
+*L-Internal [07/24/2026 14:47:35] Info output in 'coderesult.xml'
