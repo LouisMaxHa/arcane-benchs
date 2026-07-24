@@ -802,7 +802,8 @@ void MicroHydroModule::computeGeometricValues() {
         view.in_node_coord[nodes[6]], view.in_node_coord[nodes[7]]};
 
     // Coordonnées des centres des faces
-    Real3 face_coord[6] = {
+    // {
+      Real3 face_coord[6] = {
         0.25 * (coord[0] + coord[3] + coord[2] + coord[1]),
         0.25 * (coord[0] + coord[4] + coord[7] + coord[3]),
         0.25 * (coord[0] + coord[1] + coord[5] + coord[4]),
@@ -812,8 +813,6 @@ void MicroHydroModule::computeGeometricValues() {
     };
 
     // Calcule la longueur caractéristique de la maille.
-    // Todo: re-écrire ce passage
-    // {
       Real3 median1 = face_coord[0] - face_coord[3];
       Real3 median2 = face_coord[2] - face_coord[5];
       Real3 median3 = face_coord[1] - face_coord[4];
@@ -828,9 +827,9 @@ void MicroHydroModule::computeGeometricValues() {
     // }
 
     info() << "Début appelle librairie";
-    auto memref_face_coord = make_memref_1d<uint8_t>(
-        reinterpret_cast<uint8_t *>(face_coord),
-        24 * 6
+    auto memref_coord = make_memref_1d<uint8_t>(
+        reinterpret_cast<uint8_t *>(coord),
+        24 * 8
     );
     auto memref_out_caracteristic_length = make_memref_1d<double>(
         reinterpret_cast<double *>(m_caracteristic_length.asArray().data()),
@@ -839,7 +838,7 @@ void MicroHydroModule::computeGeometricValues() {
     info() << "Résultat précédant : "
            << m_caracteristic_length.asArray().data()[cid];
 
-    _mlir_ciface_xdsl_main(&memref_face_coord, cid,
+    _mlir_ciface_xdsl_main(&memref_coord, cid,
                            &memref_out_caracteristic_length);
 
     info() << "Résultat calculé : "

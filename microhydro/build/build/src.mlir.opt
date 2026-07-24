@@ -20,101 +20,407 @@ module {
     %11 = math.sqrt %10 : f64
     return %11 : f64
   }
-  func.func @xdsl_main(%arg0: memref<144xi8>, %arg1: i64, %arg2: memref<100xf64>) -> i64 attributes {llvm.emit_c_interface} {
+  func.func @xdsl_main(%arg0: memref<192xi8>, %arg1: i64, %arg2: memref<100xf64>) -> i64 attributes {llvm.emit_c_interface} {
+    %c144 = arith.constant 144 : index
+    %c120 = arith.constant 120 : index
+    %c168 = arith.constant 168 : index
     %c96 = arith.constant 96 : index
     %c24 = arith.constant 24 : index
-    %c120 = arith.constant 120 : index
     %c48 = arith.constant 48 : index
     %c72 = arith.constant 72 : index
     %c0_i64 = arith.constant 0 : i64
     %c16 = arith.constant 16 : index
     %c8 = arith.constant 8 : index
     %c0 = arith.constant 0 : index
-    %alloca = memref.alloca() : memref<24xi8>
-    %view = memref.view %arg0[%c0][] : memref<144xi8> to memref<24xi8>
+    %cst = arith.constant 2.500000e-01 : f64
+    %alloca = memref.alloca() : memref<144xi8>
+    %view = memref.view %arg0[%c0][] : memref<192xi8> to memref<24xi8>
     %view_0 = memref.view %view[%c0][] : memref<24xi8> to memref<f64>
     %0 = memref.load %view_0[] : memref<f64>
-    %view_1 = memref.view %arg0[%c72][] : memref<144xi8> to memref<24xi8>
+    %view_1 = memref.view %arg0[%c72][] : memref<192xi8> to memref<24xi8>
     %view_2 = memref.view %view_1[%c0][] : memref<24xi8> to memref<f64>
     %1 = memref.load %view_2[] : memref<f64>
-    %2 = arith.subf %0, %1 : f64
-    %view_3 = memref.view %alloca[%c0][] : memref<24xi8> to memref<f64>
-    memref.store %2, %view_3[] : memref<f64>
-    %view_4 = memref.view %view[%c8][] : memref<24xi8> to memref<f64>
-    %3 = memref.load %view_4[] : memref<f64>
-    %view_5 = memref.view %view_1[%c8][] : memref<24xi8> to memref<f64>
-    %4 = memref.load %view_5[] : memref<f64>
-    %5 = arith.subf %3, %4 : f64
-    %view_6 = memref.view %alloca[%c8][] : memref<24xi8> to memref<f64>
-    memref.store %5, %view_6[] : memref<f64>
-    %view_7 = memref.view %view[%c16][] : memref<24xi8> to memref<f64>
-    %6 = memref.load %view_7[] : memref<f64>
-    %view_8 = memref.view %view_1[%c16][] : memref<24xi8> to memref<f64>
-    %7 = memref.load %view_8[] : memref<f64>
-    %8 = arith.subf %6, %7 : f64
-    %view_9 = memref.view %alloca[%c16][] : memref<24xi8> to memref<f64>
-    memref.store %8, %view_9[] : memref<f64>
-    %alloca_10 = memref.alloca() : memref<24xi8>
-    %view_11 = memref.view %arg0[%c48][] : memref<144xi8> to memref<24xi8>
+    %2 = arith.addf %0, %1 : f64
+    %view_3 = memref.view %alloca[%c0][] : memref<144xi8> to memref<24xi8>
+    %view_4 = memref.view %view_3[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %2, %view_4[] : memref<f64>
+    %view_5 = memref.view %view[%c8][] : memref<24xi8> to memref<f64>
+    %3 = memref.load %view_5[] : memref<f64>
+    %view_6 = memref.view %view_1[%c8][] : memref<24xi8> to memref<f64>
+    %4 = memref.load %view_6[] : memref<f64>
+    %5 = arith.addf %3, %4 : f64
+    %view_7 = memref.view %view_3[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %5, %view_7[] : memref<f64>
+    %view_8 = memref.view %view[%c16][] : memref<24xi8> to memref<f64>
+    %6 = memref.load %view_8[] : memref<f64>
+    %view_9 = memref.view %view_1[%c16][] : memref<24xi8> to memref<f64>
+    %7 = memref.load %view_9[] : memref<f64>
+    %8 = arith.addf %6, %7 : f64
+    %view_10 = memref.view %view_3[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %8, %view_10[] : memref<f64>
+    %9 = memref.load %view_4[] : memref<f64>
+    %view_11 = memref.view %arg0[%c48][] : memref<192xi8> to memref<24xi8>
     %view_12 = memref.view %view_11[%c0][] : memref<24xi8> to memref<f64>
-    %9 = memref.load %view_12[] : memref<f64>
-    %view_13 = memref.view %arg0[%c120][] : memref<144xi8> to memref<24xi8>
-    %view_14 = memref.view %view_13[%c0][] : memref<24xi8> to memref<f64>
-    %10 = memref.load %view_14[] : memref<f64>
-    %11 = arith.subf %9, %10 : f64
-    %view_15 = memref.view %alloca_10[%c0][] : memref<24xi8> to memref<f64>
-    memref.store %11, %view_15[] : memref<f64>
-    %view_16 = memref.view %view_11[%c8][] : memref<24xi8> to memref<f64>
-    %12 = memref.load %view_16[] : memref<f64>
-    %view_17 = memref.view %view_13[%c8][] : memref<24xi8> to memref<f64>
-    %13 = memref.load %view_17[] : memref<f64>
-    %14 = arith.subf %12, %13 : f64
-    %view_18 = memref.view %alloca_10[%c8][] : memref<24xi8> to memref<f64>
-    memref.store %14, %view_18[] : memref<f64>
-    %view_19 = memref.view %view_11[%c16][] : memref<24xi8> to memref<f64>
-    %15 = memref.load %view_19[] : memref<f64>
-    %view_20 = memref.view %view_13[%c16][] : memref<24xi8> to memref<f64>
-    %16 = memref.load %view_20[] : memref<f64>
-    %17 = arith.subf %15, %16 : f64
-    %view_21 = memref.view %alloca_10[%c16][] : memref<24xi8> to memref<f64>
-    memref.store %17, %view_21[] : memref<f64>
-    %alloca_22 = memref.alloca() : memref<24xi8>
-    %view_23 = memref.view %arg0[%c24][] : memref<144xi8> to memref<24xi8>
-    %view_24 = memref.view %view_23[%c0][] : memref<24xi8> to memref<f64>
-    %18 = memref.load %view_24[] : memref<f64>
-    %view_25 = memref.view %arg0[%c96][] : memref<144xi8> to memref<24xi8>
-    %view_26 = memref.view %view_25[%c0][] : memref<24xi8> to memref<f64>
-    %19 = memref.load %view_26[] : memref<f64>
-    %20 = arith.subf %18, %19 : f64
-    %view_27 = memref.view %alloca_22[%c0][] : memref<24xi8> to memref<f64>
-    memref.store %20, %view_27[] : memref<f64>
-    %view_28 = memref.view %view_23[%c8][] : memref<24xi8> to memref<f64>
-    %21 = memref.load %view_28[] : memref<f64>
-    %view_29 = memref.view %view_25[%c8][] : memref<24xi8> to memref<f64>
-    %22 = memref.load %view_29[] : memref<f64>
-    %23 = arith.subf %21, %22 : f64
-    %view_30 = memref.view %alloca_22[%c8][] : memref<24xi8> to memref<f64>
-    memref.store %23, %view_30[] : memref<f64>
-    %view_31 = memref.view %view_23[%c16][] : memref<24xi8> to memref<f64>
-    %24 = memref.load %view_31[] : memref<f64>
-    %view_32 = memref.view %view_25[%c16][] : memref<24xi8> to memref<f64>
-    %25 = memref.load %view_32[] : memref<f64>
-    %26 = arith.subf %24, %25 : f64
-    %view_33 = memref.view %alloca_22[%c16][] : memref<24xi8> to memref<f64>
-    memref.store %26, %view_33[] : memref<f64>
-    %27 = call @normL2(%alloca) : (memref<24xi8>) -> f64
-    %28 = call @normL2(%alloca_10) : (memref<24xi8>) -> f64
-    %29 = call @normL2(%alloca_22) : (memref<24xi8>) -> f64
-    %30 = arith.mulf %28, %29 : f64
-    %31 = arith.mulf %27, %30 : f64
-    %32 = arith.mulf %27, %28 : f64
-    %33 = arith.mulf %27, %29 : f64
-    %34 = arith.mulf %28, %29 : f64
+    %10 = memref.load %view_12[] : memref<f64>
+    %11 = arith.addf %9, %10 : f64
+    memref.store %11, %view_4[] : memref<f64>
+    %12 = memref.load %view_7[] : memref<f64>
+    %view_13 = memref.view %view_11[%c8][] : memref<24xi8> to memref<f64>
+    %13 = memref.load %view_13[] : memref<f64>
+    %14 = arith.addf %12, %13 : f64
+    memref.store %14, %view_7[] : memref<f64>
+    %15 = memref.load %view_10[] : memref<f64>
+    %view_14 = memref.view %view_11[%c16][] : memref<24xi8> to memref<f64>
+    %16 = memref.load %view_14[] : memref<f64>
+    %17 = arith.addf %15, %16 : f64
+    memref.store %17, %view_10[] : memref<f64>
+    %18 = memref.load %view_4[] : memref<f64>
+    %view_15 = memref.view %arg0[%c24][] : memref<192xi8> to memref<24xi8>
+    %view_16 = memref.view %view_15[%c0][] : memref<24xi8> to memref<f64>
+    %19 = memref.load %view_16[] : memref<f64>
+    %20 = arith.addf %18, %19 : f64
+    memref.store %20, %view_4[] : memref<f64>
+    %21 = memref.load %view_7[] : memref<f64>
+    %view_17 = memref.view %view_15[%c8][] : memref<24xi8> to memref<f64>
+    %22 = memref.load %view_17[] : memref<f64>
+    %23 = arith.addf %21, %22 : f64
+    memref.store %23, %view_7[] : memref<f64>
+    %24 = memref.load %view_10[] : memref<f64>
+    %view_18 = memref.view %view_15[%c16][] : memref<24xi8> to memref<f64>
+    %25 = memref.load %view_18[] : memref<f64>
+    %26 = arith.addf %24, %25 : f64
+    memref.store %26, %view_10[] : memref<f64>
+    %27 = memref.load %view_4[] : memref<f64>
+    %28 = arith.mulf %27, %cst : f64
+    memref.store %28, %view_4[] : memref<f64>
+    %29 = memref.load %view_7[] : memref<f64>
+    %30 = arith.mulf %29, %cst : f64
+    memref.store %30, %view_7[] : memref<f64>
+    %31 = memref.load %view_10[] : memref<f64>
+    %32 = arith.mulf %31, %cst : f64
+    memref.store %32, %view_10[] : memref<f64>
+    %33 = memref.load %view_0[] : memref<f64>
+    %view_19 = memref.view %arg0[%c96][] : memref<192xi8> to memref<24xi8>
+    %view_20 = memref.view %view_19[%c0][] : memref<24xi8> to memref<f64>
+    %34 = memref.load %view_20[] : memref<f64>
     %35 = arith.addf %33, %34 : f64
-    %36 = arith.addf %32, %35 : f64
-    %37 = arith.divf %31, %36 : f64
-    %38 = arith.index_cast %arg1 : i64 to index
-    memref.store %37, %arg2[%38] : memref<100xf64>
+    %view_21 = memref.view %alloca[%c24][] : memref<144xi8> to memref<24xi8>
+    %view_22 = memref.view %view_21[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %35, %view_22[] : memref<f64>
+    %36 = memref.load %view_5[] : memref<f64>
+    %view_23 = memref.view %view_19[%c8][] : memref<24xi8> to memref<f64>
+    %37 = memref.load %view_23[] : memref<f64>
+    %38 = arith.addf %36, %37 : f64
+    %view_24 = memref.view %view_21[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %38, %view_24[] : memref<f64>
+    %39 = memref.load %view_8[] : memref<f64>
+    %view_25 = memref.view %view_19[%c16][] : memref<24xi8> to memref<f64>
+    %40 = memref.load %view_25[] : memref<f64>
+    %41 = arith.addf %39, %40 : f64
+    %view_26 = memref.view %view_21[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %41, %view_26[] : memref<f64>
+    %42 = memref.load %view_22[] : memref<f64>
+    %view_27 = memref.view %arg0[%c168][] : memref<192xi8> to memref<24xi8>
+    %view_28 = memref.view %view_27[%c0][] : memref<24xi8> to memref<f64>
+    %43 = memref.load %view_28[] : memref<f64>
+    %44 = arith.addf %42, %43 : f64
+    memref.store %44, %view_22[] : memref<f64>
+    %45 = memref.load %view_24[] : memref<f64>
+    %view_29 = memref.view %view_27[%c8][] : memref<24xi8> to memref<f64>
+    %46 = memref.load %view_29[] : memref<f64>
+    %47 = arith.addf %45, %46 : f64
+    memref.store %47, %view_24[] : memref<f64>
+    %48 = memref.load %view_26[] : memref<f64>
+    %view_30 = memref.view %view_27[%c16][] : memref<24xi8> to memref<f64>
+    %49 = memref.load %view_30[] : memref<f64>
+    %50 = arith.addf %48, %49 : f64
+    memref.store %50, %view_26[] : memref<f64>
+    %51 = memref.load %view_22[] : memref<f64>
+    %52 = memref.load %view_2[] : memref<f64>
+    %53 = arith.addf %51, %52 : f64
+    memref.store %53, %view_22[] : memref<f64>
+    %54 = memref.load %view_24[] : memref<f64>
+    %55 = memref.load %view_6[] : memref<f64>
+    %56 = arith.addf %54, %55 : f64
+    memref.store %56, %view_24[] : memref<f64>
+    %57 = memref.load %view_26[] : memref<f64>
+    %58 = memref.load %view_9[] : memref<f64>
+    %59 = arith.addf %57, %58 : f64
+    memref.store %59, %view_26[] : memref<f64>
+    %60 = memref.load %view_22[] : memref<f64>
+    %61 = arith.mulf %60, %cst : f64
+    memref.store %61, %view_22[] : memref<f64>
+    %62 = memref.load %view_24[] : memref<f64>
+    %63 = arith.mulf %62, %cst : f64
+    memref.store %63, %view_24[] : memref<f64>
+    %64 = memref.load %view_26[] : memref<f64>
+    %65 = arith.mulf %64, %cst : f64
+    memref.store %65, %view_26[] : memref<f64>
+    %66 = memref.load %view_0[] : memref<f64>
+    %67 = memref.load %view_16[] : memref<f64>
+    %68 = arith.addf %66, %67 : f64
+    %view_31 = memref.view %alloca[%c48][] : memref<144xi8> to memref<24xi8>
+    %view_32 = memref.view %view_31[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %68, %view_32[] : memref<f64>
+    %69 = memref.load %view_5[] : memref<f64>
+    %70 = memref.load %view_17[] : memref<f64>
+    %71 = arith.addf %69, %70 : f64
+    %view_33 = memref.view %view_31[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %71, %view_33[] : memref<f64>
+    %72 = memref.load %view_8[] : memref<f64>
+    %73 = memref.load %view_18[] : memref<f64>
+    %74 = arith.addf %72, %73 : f64
+    %view_34 = memref.view %view_31[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %74, %view_34[] : memref<f64>
+    %75 = memref.load %view_32[] : memref<f64>
+    %view_35 = memref.view %arg0[%c120][] : memref<192xi8> to memref<24xi8>
+    %view_36 = memref.view %view_35[%c0][] : memref<24xi8> to memref<f64>
+    %76 = memref.load %view_36[] : memref<f64>
+    %77 = arith.addf %75, %76 : f64
+    memref.store %77, %view_32[] : memref<f64>
+    %78 = memref.load %view_33[] : memref<f64>
+    %view_37 = memref.view %view_35[%c8][] : memref<24xi8> to memref<f64>
+    %79 = memref.load %view_37[] : memref<f64>
+    %80 = arith.addf %78, %79 : f64
+    memref.store %80, %view_33[] : memref<f64>
+    %81 = memref.load %view_34[] : memref<f64>
+    %view_38 = memref.view %view_35[%c16][] : memref<24xi8> to memref<f64>
+    %82 = memref.load %view_38[] : memref<f64>
+    %83 = arith.addf %81, %82 : f64
+    memref.store %83, %view_34[] : memref<f64>
+    %84 = memref.load %view_32[] : memref<f64>
+    %85 = memref.load %view_20[] : memref<f64>
+    %86 = arith.addf %84, %85 : f64
+    memref.store %86, %view_32[] : memref<f64>
+    %87 = memref.load %view_33[] : memref<f64>
+    %88 = memref.load %view_23[] : memref<f64>
+    %89 = arith.addf %87, %88 : f64
+    memref.store %89, %view_33[] : memref<f64>
+    %90 = memref.load %view_34[] : memref<f64>
+    %91 = memref.load %view_25[] : memref<f64>
+    %92 = arith.addf %90, %91 : f64
+    memref.store %92, %view_34[] : memref<f64>
+    %93 = memref.load %view_32[] : memref<f64>
+    %94 = arith.mulf %93, %cst : f64
+    memref.store %94, %view_32[] : memref<f64>
+    %95 = memref.load %view_33[] : memref<f64>
+    %96 = arith.mulf %95, %cst : f64
+    memref.store %96, %view_33[] : memref<f64>
+    %97 = memref.load %view_34[] : memref<f64>
+    %98 = arith.mulf %97, %cst : f64
+    memref.store %98, %view_34[] : memref<f64>
+    %99 = memref.load %view_20[] : memref<f64>
+    %100 = memref.load %view_36[] : memref<f64>
+    %101 = arith.addf %99, %100 : f64
+    %view_39 = memref.view %alloca[%c72][] : memref<144xi8> to memref<24xi8>
+    %view_40 = memref.view %view_39[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %101, %view_40[] : memref<f64>
+    %102 = memref.load %view_23[] : memref<f64>
+    %103 = memref.load %view_37[] : memref<f64>
+    %104 = arith.addf %102, %103 : f64
+    %view_41 = memref.view %view_39[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %104, %view_41[] : memref<f64>
+    %105 = memref.load %view_25[] : memref<f64>
+    %106 = memref.load %view_38[] : memref<f64>
+    %107 = arith.addf %105, %106 : f64
+    %view_42 = memref.view %view_39[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %107, %view_42[] : memref<f64>
+    %108 = memref.load %view_40[] : memref<f64>
+    %view_43 = memref.view %arg0[%c144][] : memref<192xi8> to memref<24xi8>
+    %view_44 = memref.view %view_43[%c0][] : memref<24xi8> to memref<f64>
+    %109 = memref.load %view_44[] : memref<f64>
+    %110 = arith.addf %108, %109 : f64
+    memref.store %110, %view_40[] : memref<f64>
+    %111 = memref.load %view_41[] : memref<f64>
+    %view_45 = memref.view %view_43[%c8][] : memref<24xi8> to memref<f64>
+    %112 = memref.load %view_45[] : memref<f64>
+    %113 = arith.addf %111, %112 : f64
+    memref.store %113, %view_41[] : memref<f64>
+    %114 = memref.load %view_42[] : memref<f64>
+    %view_46 = memref.view %view_43[%c16][] : memref<24xi8> to memref<f64>
+    %115 = memref.load %view_46[] : memref<f64>
+    %116 = arith.addf %114, %115 : f64
+    memref.store %116, %view_42[] : memref<f64>
+    %117 = memref.load %view_40[] : memref<f64>
+    %118 = memref.load %view_28[] : memref<f64>
+    %119 = arith.addf %117, %118 : f64
+    memref.store %119, %view_40[] : memref<f64>
+    %120 = memref.load %view_41[] : memref<f64>
+    %121 = memref.load %view_29[] : memref<f64>
+    %122 = arith.addf %120, %121 : f64
+    memref.store %122, %view_41[] : memref<f64>
+    %123 = memref.load %view_42[] : memref<f64>
+    %124 = memref.load %view_30[] : memref<f64>
+    %125 = arith.addf %123, %124 : f64
+    memref.store %125, %view_42[] : memref<f64>
+    %126 = memref.load %view_40[] : memref<f64>
+    %127 = arith.mulf %126, %cst : f64
+    memref.store %127, %view_40[] : memref<f64>
+    %128 = memref.load %view_41[] : memref<f64>
+    %129 = arith.mulf %128, %cst : f64
+    memref.store %129, %view_41[] : memref<f64>
+    %130 = memref.load %view_42[] : memref<f64>
+    %131 = arith.mulf %130, %cst : f64
+    memref.store %131, %view_42[] : memref<f64>
+    %132 = memref.load %view_16[] : memref<f64>
+    %133 = memref.load %view_12[] : memref<f64>
+    %134 = arith.addf %132, %133 : f64
+    %view_47 = memref.view %alloca[%c96][] : memref<144xi8> to memref<24xi8>
+    %view_48 = memref.view %view_47[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %134, %view_48[] : memref<f64>
+    %135 = memref.load %view_17[] : memref<f64>
+    %136 = memref.load %view_13[] : memref<f64>
+    %137 = arith.addf %135, %136 : f64
+    %view_49 = memref.view %view_47[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %137, %view_49[] : memref<f64>
+    %138 = memref.load %view_18[] : memref<f64>
+    %139 = memref.load %view_14[] : memref<f64>
+    %140 = arith.addf %138, %139 : f64
+    %view_50 = memref.view %view_47[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %140, %view_50[] : memref<f64>
+    %141 = memref.load %view_48[] : memref<f64>
+    %142 = memref.load %view_44[] : memref<f64>
+    %143 = arith.addf %141, %142 : f64
+    memref.store %143, %view_48[] : memref<f64>
+    %144 = memref.load %view_49[] : memref<f64>
+    %145 = memref.load %view_45[] : memref<f64>
+    %146 = arith.addf %144, %145 : f64
+    memref.store %146, %view_49[] : memref<f64>
+    %147 = memref.load %view_50[] : memref<f64>
+    %148 = memref.load %view_46[] : memref<f64>
+    %149 = arith.addf %147, %148 : f64
+    memref.store %149, %view_50[] : memref<f64>
+    %150 = memref.load %view_48[] : memref<f64>
+    %151 = memref.load %view_36[] : memref<f64>
+    %152 = arith.addf %150, %151 : f64
+    memref.store %152, %view_48[] : memref<f64>
+    %153 = memref.load %view_49[] : memref<f64>
+    %154 = memref.load %view_37[] : memref<f64>
+    %155 = arith.addf %153, %154 : f64
+    memref.store %155, %view_49[] : memref<f64>
+    %156 = memref.load %view_50[] : memref<f64>
+    %157 = memref.load %view_38[] : memref<f64>
+    %158 = arith.addf %156, %157 : f64
+    memref.store %158, %view_50[] : memref<f64>
+    %159 = memref.load %view_48[] : memref<f64>
+    %160 = arith.mulf %159, %cst : f64
+    memref.store %160, %view_48[] : memref<f64>
+    %161 = memref.load %view_49[] : memref<f64>
+    %162 = arith.mulf %161, %cst : f64
+    memref.store %162, %view_49[] : memref<f64>
+    %163 = memref.load %view_50[] : memref<f64>
+    %164 = arith.mulf %163, %cst : f64
+    memref.store %164, %view_50[] : memref<f64>
+    %165 = memref.load %view_12[] : memref<f64>
+    %166 = memref.load %view_2[] : memref<f64>
+    %167 = arith.addf %165, %166 : f64
+    %view_51 = memref.view %alloca[%c120][] : memref<144xi8> to memref<24xi8>
+    %view_52 = memref.view %view_51[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %167, %view_52[] : memref<f64>
+    %168 = memref.load %view_13[] : memref<f64>
+    %169 = memref.load %view_6[] : memref<f64>
+    %170 = arith.addf %168, %169 : f64
+    %view_53 = memref.view %view_51[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %170, %view_53[] : memref<f64>
+    %171 = memref.load %view_14[] : memref<f64>
+    %172 = memref.load %view_9[] : memref<f64>
+    %173 = arith.addf %171, %172 : f64
+    %view_54 = memref.view %view_51[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %173, %view_54[] : memref<f64>
+    %174 = memref.load %view_52[] : memref<f64>
+    %175 = memref.load %view_28[] : memref<f64>
+    %176 = arith.addf %174, %175 : f64
+    memref.store %176, %view_52[] : memref<f64>
+    %177 = memref.load %view_53[] : memref<f64>
+    %178 = memref.load %view_29[] : memref<f64>
+    %179 = arith.addf %177, %178 : f64
+    memref.store %179, %view_53[] : memref<f64>
+    %180 = memref.load %view_54[] : memref<f64>
+    %181 = memref.load %view_30[] : memref<f64>
+    %182 = arith.addf %180, %181 : f64
+    memref.store %182, %view_54[] : memref<f64>
+    %183 = memref.load %view_52[] : memref<f64>
+    %184 = memref.load %view_44[] : memref<f64>
+    %185 = arith.addf %183, %184 : f64
+    memref.store %185, %view_52[] : memref<f64>
+    %186 = memref.load %view_53[] : memref<f64>
+    %187 = memref.load %view_45[] : memref<f64>
+    %188 = arith.addf %186, %187 : f64
+    memref.store %188, %view_53[] : memref<f64>
+    %189 = memref.load %view_54[] : memref<f64>
+    %190 = memref.load %view_46[] : memref<f64>
+    %191 = arith.addf %189, %190 : f64
+    memref.store %191, %view_54[] : memref<f64>
+    %192 = memref.load %view_52[] : memref<f64>
+    %193 = arith.mulf %192, %cst : f64
+    memref.store %193, %view_52[] : memref<f64>
+    %194 = memref.load %view_53[] : memref<f64>
+    %195 = arith.mulf %194, %cst : f64
+    memref.store %195, %view_53[] : memref<f64>
+    %196 = memref.load %view_54[] : memref<f64>
+    %197 = arith.mulf %196, %cst : f64
+    memref.store %197, %view_54[] : memref<f64>
+    %alloca_55 = memref.alloca() : memref<24xi8>
+    %alloca_56 = memref.alloca() : memref<24xi8>
+    %alloca_57 = memref.alloca() : memref<24xi8>
+    %198 = memref.load %view_4[] : memref<f64>
+    %199 = memref.load %view_40[] : memref<f64>
+    %200 = arith.subf %198, %199 : f64
+    %view_58 = memref.view %alloca_55[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %200, %view_58[] : memref<f64>
+    %201 = memref.load %view_7[] : memref<f64>
+    %202 = memref.load %view_41[] : memref<f64>
+    %203 = arith.subf %201, %202 : f64
+    %view_59 = memref.view %alloca_55[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %203, %view_59[] : memref<f64>
+    %204 = memref.load %view_10[] : memref<f64>
+    %205 = memref.load %view_42[] : memref<f64>
+    %206 = arith.subf %204, %205 : f64
+    %view_60 = memref.view %alloca_55[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %206, %view_60[] : memref<f64>
+    %207 = memref.load %view_32[] : memref<f64>
+    %208 = memref.load %view_52[] : memref<f64>
+    %209 = arith.subf %207, %208 : f64
+    %view_61 = memref.view %alloca_56[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %209, %view_61[] : memref<f64>
+    %210 = memref.load %view_33[] : memref<f64>
+    %211 = memref.load %view_53[] : memref<f64>
+    %212 = arith.subf %210, %211 : f64
+    %view_62 = memref.view %alloca_56[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %212, %view_62[] : memref<f64>
+    %213 = memref.load %view_34[] : memref<f64>
+    %214 = memref.load %view_54[] : memref<f64>
+    %215 = arith.subf %213, %214 : f64
+    %view_63 = memref.view %alloca_56[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %215, %view_63[] : memref<f64>
+    %216 = memref.load %view_22[] : memref<f64>
+    %217 = memref.load %view_48[] : memref<f64>
+    %218 = arith.subf %216, %217 : f64
+    %view_64 = memref.view %alloca_57[%c0][] : memref<24xi8> to memref<f64>
+    memref.store %218, %view_64[] : memref<f64>
+    %219 = memref.load %view_24[] : memref<f64>
+    %220 = memref.load %view_49[] : memref<f64>
+    %221 = arith.subf %219, %220 : f64
+    %view_65 = memref.view %alloca_57[%c8][] : memref<24xi8> to memref<f64>
+    memref.store %221, %view_65[] : memref<f64>
+    %222 = memref.load %view_26[] : memref<f64>
+    %223 = memref.load %view_50[] : memref<f64>
+    %224 = arith.subf %222, %223 : f64
+    %view_66 = memref.view %alloca_57[%c16][] : memref<24xi8> to memref<f64>
+    memref.store %224, %view_66[] : memref<f64>
+    %225 = call @normL2(%alloca_55) : (memref<24xi8>) -> f64
+    %226 = call @normL2(%alloca_56) : (memref<24xi8>) -> f64
+    %227 = call @normL2(%alloca_57) : (memref<24xi8>) -> f64
+    %228 = arith.mulf %226, %227 : f64
+    %229 = arith.mulf %225, %228 : f64
+    %230 = arith.mulf %225, %226 : f64
+    %231 = arith.mulf %225, %227 : f64
+    %232 = arith.mulf %226, %227 : f64
+    %233 = arith.addf %231, %232 : f64
+    %234 = arith.addf %230, %233 : f64
+    %235 = arith.divf %229, %234 : f64
+    %236 = arith.index_cast %arg1 : i64 to index
+    memref.store %235, %arg2[%236] : memref<100xf64>
     return %c0_i64 : i64
   }
 }
