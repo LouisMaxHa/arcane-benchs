@@ -763,11 +763,8 @@ struct ComputeGeometricValuesView final {
 };
 
 extern "C" {
-  void _mlir_ciface_xdsl_main(
-    MemRefType<int8_t, 1> face_coord,
-    int64_t cid,
-    MemRefType<int8_t, 1> out_caracteristic_length
-  );
+void _mlir_ciface_xdsl_main(MemRefType<uint8_t, 1> *face_coord, int64_t cid,
+                            MemRefType<double, 1> *out_caracteristic_length);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -785,13 +782,12 @@ void MicroHydroModule::computeGeometricValues() {
 
   // auto out_volume = viewOut(command, m_volume);
   // auto out_old_volume = viewOut(command, m_old_volume);
-  // auto out_caracteristic_length = viewOut(command, m_caracteristic_length);
+  auto out_caracteristic_length = viewOut(command, m_caracteristic_length);
 
   auto view = ComputeGeometricValuesView(
       viewIn(command, m_node_coord), viewInOut(command, m_cell_cqs),
       viewInOut(command, m_volume), viewOut(command, m_old_volume),
-      viewOut(command, m_caracteristic_length));
-
+      out_caracteristic_length);
 
   auto cnc = m_connectivity_view.cellNode();
 
@@ -818,27 +814,31 @@ void MicroHydroModule::computeGeometricValues() {
     // Calcule la longueur caractéristique de la maille.
     // Todo: re-écrire ce passage
     // {
-      Real3 median1 = face_coord[0] - face_coord[3];
-      Real3 median2 = face_coord[2] - face_coord[5];
-      Real3 median3 = face_coord[1] - face_coord[4];
-      Real d1 = median1.normL2();
-      Real d2 = median2.normL2();
-      Real d3 = median3.normL2();
+    Real3 median1 = face_coord[0] - face_coord[3];
+    Real3 median2 = face_coord[2] - face_coord[5];
+    Real3 median3 = face_coord[1] - face_coord[4];
+    Real d1 = median1.normL2();
+    Real d2 = median2.normL2();
+    Real d3 = median3.normL2();
 
-      Real dx_numerator = d1 * d2 * d3;
-      Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
-      Real expected = dx_numerator / dx_denominator;
-      // view.out_caracteristic_length[cid] = expected;
+    Real dx_numerator = d1 * d2 * d3;
+    Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
+    Real expected = dx_numerator / dx_denominator;
+    // view.out_caracteristic_length[cid] = expected;
     // }
 
+    auto memref_face_coord = make_memref_1d<uint8_t>(
+        reinterpret_cast<uint8_t *>(face_coord), 24 * 6);
+    auto memref_out_caracteristic_length = make_memref_1d<double>(
+        reinterpret_cast<double *>(m_caracteristic_length.asArray().data()),
+        m_caracteristic_length.asArray().size());
+    _mlir_ciface_xdsl_main(&memref_face_coord, cid,
+                           &memref_out_caracteristic_length);
 
-    _mlir_ciface_xdsl_main(
-      make_memref_1d<uint8_t>(reinterpret_cast<uint8_t *>(face_coord), 24 * 6),
-      cid,
-      make_memref_1d<uint8_t>(reinterpret_cast<uint8_t *>(view.out_caracteristic_length), 99999)
-    );
-    // info() << "Résultat calculé depuis la fonction MLIR : " << result;
-    assert view.out_caracteristic_length[cid] == expected;
+    info() << "Résultat calculé : "
+           << m_caracteristic_length.asArray().data()[cid];
+    info() << "Résultat attendu : " << expected;
+    assert(m_caracteristic_length.asArray().data()[cid] == expected);
 
     // Calcule les résultantes aux sommets
     computeCQs(coord, face_coord, view.in_out_cell_cqs[cid]);

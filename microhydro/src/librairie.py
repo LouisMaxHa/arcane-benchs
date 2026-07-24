@@ -4,6 +4,7 @@ from xdsljson.operations import (
     Alloc,
     Binary,
     Call,
+    Const,
     DefineFunction,
     DefineStruct,
     Function,
@@ -28,13 +29,6 @@ module = Module([
         ]
     ),
     DefineStruct(
-        "Real3", 24, [
-            ("x", "f64", 0, 8),
-            ("y", "f64", 8, 8),
-            ("z", "f64", 16, 8),
-        ]
-    ),
-    DefineStruct(
         "ComputeGeometricValuesView", 80, [
             ("node_coord", TyPtr(TyMemref([None], TyStruct("Real3"))), 0, 16),
             ("cell_cqs", TyPtr(TyMemref([None, 8], TyStruct("Real3"))), 16, 16),
@@ -45,18 +39,18 @@ module = Module([
     ),
     DefineFunction(
         "normL2",
-        [("r1", TyStruct("Real3")), ("r2", TyStruct("Real3"))],
+        [("r1", TyStruct("Real3"))],
         [TyScalar(Scalar.f64)],
     ),
     Function(
         "normL2",[
-            ("r1", TyStruct("Real3")), ("r2", TyStruct("Real3"))
+            ("r1", TyStruct("Real3"))
         ], [
             Binary("+f", 
-                Binary("*f", Var("r1", ["x"]), Var("r2", ["x"])),
+                Binary("*f", Var("r1", ["x"]), Var("r1", ["x"])),
                 Binary("+f",
-                    Binary("*f", Var("r1", ["y"]), Var("r2", ["y"])),
-                    Binary("*f", Var("r1", ["z"]), Var("r2", ["z"]))
+                    Binary("*f", Var("r1", ["y"]), Var("r1", ["y"])),
+                    Binary("*f", Var("r1", ["z"]), Var("r1", ["z"]))
                 )
             )
         ],
@@ -65,7 +59,7 @@ module = Module([
         "xdsl_main",[
             ("face_coord", TyMemref([6], TyStruct("Real3"))),
             ("cid", TyScalar(Scalar.i64)),
-            ("out_caracteristic_length", TyMemref([None], TyStruct("Real3"))),
+            ("out_caracteristic_length", TyMemref([100], TyStruct("Real3"))),
         ], [
             Alloca("median1", TyStruct("Real3")),
             Set(Var("median1", ["x"]), Binary("-f", Var("face_coord", [0, "x"]), Var("face_coord", [3, "x"]))),
@@ -80,12 +74,12 @@ module = Module([
             Set(Var("median3", ["y"]), Binary("-f", Var("face_coord", [1, "y"]), Var("face_coord", [4, "y"]))),
             Set(Var("median3", ["z"]), Binary("-f", Var("face_coord", [1, "z"]), Var("face_coord", [4, "z"]))),
 
-            Set(Var("d1"), Call("normL2", [Var("median1")])),
-            Set(Var("d2"), Call("normL2", [Var("median2")])),
-            Set(Var("d3"), Call("normL2", [Var("median3")])),
+            Set(Var("d1", type=TyScalar(Scalar.f64)), Call("normL2", [Var("median1")])),
+            Set(Var("d2", type=TyScalar(Scalar.f64)), Call("normL2", [Var("median2")])),
+            Set(Var("d3", type=TyScalar(Scalar.f64)), Call("normL2", [Var("median3")])),
 
-            Set(Var("dx_numerator"), Binary("*f", Var("d1"), Binary("*f", Var("d2"), Var("d3")))),
-            Set(Var("dx_denominator"),
+            Set(Var("dx_numerator", type=TyScalar(Scalar.f64)), Binary("*f", Var("d1"), Binary("*f", Var("d2"), Var("d3")))),
+            Set(Var("dx_denominator", type=TyScalar(Scalar.f64)),
                 Binary("+f", 
                     Binary("*f", Var("d1"), Var("d2")),
                     Binary("+f",
@@ -94,7 +88,9 @@ module = Module([
                     )
                 )
             ),
-            Set(Var("out_caracteristic_length", [Var("cid")]), Binary("/f", Var("dx_numerator"), Var("dx_denominator")))
+            Set(Var("out_caracteristic_length", [Var("cid")]), Binary("/f", Var("dx_numerator"), Var("dx_denominator"))),
+            Set(Var("out_caracteristic_length", [Var("cid")]), Const(0.1, "f64")),
+            Const(0, type=Scalar.i64)
         ],
     )
 ])

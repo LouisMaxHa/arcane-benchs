@@ -686,4 +686,5 @@ CMakeFiles/MicroHydro.dir/MicroHydroModule.cc.o: \
   /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include/arcane/core/CommonVariables.h \
   /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include/arcane/ServiceInfo.h \
   /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include/arcane/core/ServiceInfo.h \
-  /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include/arcane/utils/FileContent.h
+  /home/harterl/git/spack/var/spack/environments/arcane-test/.spack-env/view/include/arcane/utils/FileContent.h \
+  /home/harterl/git/arcane-benchs/microhydro/src/memref_bridge.h
