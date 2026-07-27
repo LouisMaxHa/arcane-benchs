@@ -229,8 +229,7 @@ module = Module([
         [
             ("node_coord", TyMemref([8], TyStruct("Real3"))),
             ("face_coord", TyMemref([6], TyStruct("Real3"))),
-            ("cqs", TyMemref([None, 8], TyStruct("Real3"))),
-            ("cid", TyScalar(Scalar.i64)),
+            ("cqs", TyMemref([8], TyStruct("Real3"))),
         ],
         [],
     ),
@@ -239,8 +238,7 @@ module = Module([
         [
             ("node_coord", TyMemref([8], TyStruct("Real3"))),
             ("face_coord", TyMemref([6], TyStruct("Real3"))),
-            ("cqs", TyMemref([None, 8], TyStruct("Real3"))),
-            ("cid", TyScalar(Scalar.i64)),
+            ("cqs", TyMemref([8], TyStruct("Real3"))),
         ],
         [
             Set(Var("demi", type=TyScalar(Scalar.f64)), Const(0.5, type="f64")),
@@ -255,7 +253,7 @@ module = Module([
             ("cnc", TyStruct("ItemConnectivityContainerView")),
             ("in_node_coord", TyMemref([None], TyStruct("Real3"))),
             ("cid", TyScalar(Scalar.i64)),
-            ("in_out_cell_cqs", TyMemref([None, 8], TyStruct("Real3"))),
+            ("in_out_cell_cqs", TyMemref([8], TyStruct("Real3"))),
             ("in_out_volume", TyMemref([100], TyScalar(Scalar.f64))),
             ("out_old_volume", TyMemref([100], TyScalar(Scalar.f64))),
             ("out_caracteristic_length", TyMemref([100], TyScalar(Scalar.f64))),
@@ -354,10 +352,7 @@ module = Module([
             ),
 
             # Résultantes aux sommets
-            Call(
-                "computeCQs",
-                [Var("coord"), Var("face_coord"), Var("in_out_cell_cqs"), Var("cid")],
-            ),
+            Call("computeCQs", [Var("coord"), Var("face_coord"), Var("in_out_cell_cqs")]),
 
             # Volume : sum(dot(coord[i], cqs[i])) / 3
             Set(Var("volume", type=TyScalar(Scalar.f64)), Const(0.0, type="f64")),
@@ -369,7 +364,7 @@ module = Module([
                             Var("volume"),
                             Call("dot",[
                                 Var("coord", [Var("i")]),
-                                Var("in_out_cell_cqs", [Var("cid"), Var("i")]),
+                                Var("in_out_cell_cqs", [Var("i")]),
                             ]),
                         ),
                     ),

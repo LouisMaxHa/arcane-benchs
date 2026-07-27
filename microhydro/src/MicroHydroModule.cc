@@ -808,12 +808,13 @@ void MicroHydroModule::computeGeometricValues() {
   auto memref_out_caracteristic_length = make_memref_1d<double>(
       m_caracteristic_length.asArray().data(),
       m_caracteristic_length.asArray().size());
-  auto& cell_cqs_array = m_cell_cqs.asArray();
-  auto memref_in_out_cell_cqs = make_memref_2d<uint8_t>(
-      reinterpret_cast<uint8_t *>(cell_cqs_array[0].data()),
-      cell_cqs_array.size(), 24 * 8);
 
   command << RUNCOMMAND_ENUMERATE(Cell, cid, allCells()) {
+    auto memref_in_out_cell_cqs = make_memref_1d<uint8_t>(
+      reinterpret_cast<uint8_t *>(m_cell_cqs.asArray()[cid].data()),
+      24 * 8
+    );
+
     _mlir_ciface_xdsl_main(
       &memref_cnc, &memref_in_node_coord, cid,
       &memref_in_out_cell_cqs,
