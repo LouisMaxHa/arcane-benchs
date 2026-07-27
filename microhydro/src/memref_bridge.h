@@ -41,6 +41,22 @@ MemRefType<T, 1> make_memref_1d(
 }
 
 template <typename T>
+MemRefType<T, 2> make_memref_2d(
+    T *data, int64_t dim0, int64_t dim1,
+    int64_t stride0 = -1, int64_t stride1 = 1
+){
+  if (stride0 < 0)
+    stride0 = dim1;
+  return MemRefType<T, 2>{
+    data /* Allocated */,
+    data /* Aligned */,
+    0    /* Offset */,
+    {dim0, dim1} /* Size */,
+    {stride0, stride1} /* stride */,
+  };
+}
+
+template <typename T>
 T* make_array(MemRefType<T, 1> descriptor){
   return descriptor.basePtr;
 }
