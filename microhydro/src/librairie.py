@@ -121,7 +121,7 @@ def emit_cqs(i, five_terms, one_terms):
         *SetReal3([f"sum5_{i}"], [f"sum5_{i}"], "*f", ["five"], skip_att_v2=True),
         *SetReal3([f"sum5_{i}"], [f"sum5_{i}"], "+f", [f"sum1_{i}"]),
         *SetReal3([f"sum5_{i}"], [f"sum5_{i}"], "*f", ["real_1div12"], skip_att_v2=True),
-        *CopyReal3(["cqs", Var("cid"), i], [f"sum5_{i}"]),
+        *CopyReal3(["cqs", i], [f"sum5_{i}"]),
     ]
 
 

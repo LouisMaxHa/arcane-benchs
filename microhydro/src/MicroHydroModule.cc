@@ -91,6 +91,8 @@ public:
   void applyBoundaryCondition();
   void moveNodes();
   void computeGeometricValues();
+  void computeGeometricValuesMLIR();
+  void computeGeometricValuesCPP();
   void updateDensity();
   void applyEquationOfState();
   void computeDeltaT();
@@ -763,14 +765,13 @@ struct ComputeGeometricValuesView final {
 };
 
 extern "C" {
-int64_t _mlir_ciface_xdsl_main(
-    MemRefType<uint8_t, 1> *cnc,
-    MemRefType<uint8_t, 1> *in_node_coord,
-    int64_t cid,
-    MemRefType<uint8_t, 2> *in_out_cell_cqs,
-    MemRefType<double, 1> *in_out_volume,
-    MemRefType<double, 1> *out_old_volume,
-    MemRefType<double, 1> *out_caracteristic_length);
+int64_t
+_mlir_ciface_xdsl_main(const MemRefType<uint8_t, 1> *cnc,
+                       const MemRefType<uint8_t, 1> *in_node_coord, int64_t cid,
+                       const MemRefType<uint8_t, 1> *in_out_cell_cqs,
+                       const MemRefType<double, 1> *in_out_volume,
+                       const MemRefType<double, 1> *out_old_volume,
+                       const MemRefType<double, 1> *out_caracteristic_length);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -780,13 +781,17 @@ int64_t _mlir_ciface_xdsl_main(
  * et des résultantes aux sommets.
  */
 void MicroHydroModule::computeGeometricValues() {
+  // computeGeometricValuesMLIR();
+  MicroHydroModule::computeGeometricValuesCPP();
+}
+
+/*!
+ * \brief Calcul du volume des mailles, des longueurs caractéristiques
+ * et des résultantes aux sommets.
+ */
+void MicroHydroModule::computeGeometricValuesMLIR() {
   auto queue = makeQueue(m_runner);
   auto command = makeCommand(queue);
-  // auto in_node_coord = viewIn(command, m_node_coord);
-  // auto in_out_cell_cqs = viewInOut(command, m_cell_cqs);
-  // auto in_volume = viewIn(command, m_volume);
-  // auto out_volume = viewOut(command, m_volume);
-  // auto out_old_volume = viewOut(command, m_old_volume);
   auto out_caracteristic_length = viewOut(command, m_caracteristic_length);
 
   auto view = ComputeGeometricValuesView(
@@ -796,82 +801,100 @@ void MicroHydroModule::computeGeometricValues() {
   auto cnc = m_connectivity_view.cellNode();
 
   // Création des memrefs pour nos variables
-  auto memref_cnc = make_memref_1d<uint8_t>(
-      reinterpret_cast<uint8_t *>(&cnc), 32);
+  auto memref_cnc =
+      make_memref_1d<uint8_t>(reinterpret_cast<uint8_t *>(&cnc), 32);
   auto memref_in_node_coord = make_memref_1d<uint8_t>(
       reinterpret_cast<uint8_t *>(m_node_coord.asArray().data()),
       24 * m_node_coord.asArray().size());
-  auto memref_in_out_volume = make_memref_1d<double>(
-      m_volume.asArray().data(), m_volume.asArray().size());
+  auto memref_in_out_volume = make_memref_1d<double>(m_volume.asArray().data(),
+                                                     m_volume.asArray().size());
   auto memref_out_old_volume = make_memref_1d<double>(
       m_old_volume.asArray().data(), m_old_volume.asArray().size());
-  auto memref_out_caracteristic_length = make_memref_1d<double>(
-      m_caracteristic_length.asArray().data(),
-      m_caracteristic_length.asArray().size());
+  auto memref_out_caracteristic_length =
+      make_memref_1d<double>(m_caracteristic_length.asArray().data(),
+                             m_caracteristic_length.asArray().size());
 
   command << RUNCOMMAND_ENUMERATE(Cell, cid, allCells()) {
     auto memref_in_out_cell_cqs = make_memref_1d<uint8_t>(
-      reinterpret_cast<uint8_t *>(m_cell_cqs.asArray()[cid].data()),
-      24 * 8
-    );
+        reinterpret_cast<uint8_t *>(m_cell_cqs.asArray()[cid].data()), 24 * 8);
 
-    _mlir_ciface_xdsl_main(
-      &memref_cnc, &memref_in_node_coord, cid,
-      &memref_in_out_cell_cqs,
-      &memref_in_out_volume,
-      &memref_out_old_volume,
-      &memref_out_caracteristic_length
-    );
+    _mlir_ciface_xdsl_main(&memref_cnc, &memref_in_node_coord, cid,
+                           &memref_in_out_cell_cqs, &memref_in_out_volume,
+                           &memref_out_old_volume,
+                           &memref_out_caracteristic_length);
+  };
+}
 
-    // auto nodes = cnc.nodes(cid);
+/*!
+ * \brief Calcul du volume des mailles, des longueurs caractéristiques
+ * et des résultantes aux sommets.
+ */
+void MicroHydroModule::computeGeometricValuesCPP() {
+  auto queue = makeQueue(m_runner);
+  auto command = makeCommand(queue);
+  auto in_node_coord = viewIn(command, m_node_coord);
+  auto in_out_cell_cqs = viewInOut(command, m_cell_cqs);
+  auto in_volume = viewIn(command, m_volume);
+  auto out_volume = viewOut(command, m_volume);
+  auto out_old_volume = viewOut(command, m_old_volume);
+  auto out_caracteristic_length = viewOut(command, m_caracteristic_length);
+  auto view = ComputeGeometricValuesView(
+    viewIn(command, m_node_coord), viewInOut(command, m_cell_cqs),
+    viewInOut(command, m_volume), viewOut(command, m_old_volume),
+    out_caracteristic_length);
+
+  auto cnc = m_connectivity_view.cellNode();
+
+  command << RUNCOMMAND_ENUMERATE(Cell, cid, allCells()) {
+    auto nodes = cnc.nodes(cid);
 
     // Copie locale des coordonnées des sommets d'une maille
-    // {
-    //  Real3 coord[8] = {
-    //    view.in_node_coord[nodes[0]], view.in_node_coord[nodes[1]],
-    //    view.in_node_coord[nodes[2]], view.in_node_coord[nodes[3]],
-    //    view.in_node_coord[nodes[4]], view.in_node_coord[nodes[5]],
-    //    view.in_node_coord[nodes[6]], view.in_node_coord[nodes[7]]};
+    {
+      Real3 coord[8] = {
+          view.in_node_coord[nodes[0]], view.in_node_coord[nodes[1]],
+          view.in_node_coord[nodes[2]], view.in_node_coord[nodes[3]],
+          view.in_node_coord[nodes[4]], view.in_node_coord[nodes[5]],
+          view.in_node_coord[nodes[6]], view.in_node_coord[nodes[7]]};
 
-    // Coordonnées des centres des faces
-    //   Real3 face_coord[6] = {
-    //     0.25 * (coord[0] + coord[3] + coord[2] + coord[1]),
-    //     0.25 * (coord[0] + coord[4] + coord[7] + coord[3]),
-    //     0.25 * (coord[0] + coord[1] + coord[5] + coord[4]),
-    //     0.25 * (coord[4] + coord[5] + coord[6] + coord[7]),
-    //     0.25 * (coord[1] + coord[2] + coord[6] + coord[5]),
-    //     0.25 * (coord[2] + coord[3] + coord[7] + coord[6]),
-    // };
+      // Coordonnées des centres des faces
+      Real3 face_coord[6] = {
+          0.25 * (coord[0] + coord[3] + coord[2] + coord[1]),
+          0.25 * (coord[0] + coord[4] + coord[7] + coord[3]),
+          0.25 * (coord[0] + coord[1] + coord[5] + coord[4]),
+          0.25 * (coord[4] + coord[5] + coord[6] + coord[7]),
+          0.25 * (coord[1] + coord[2] + coord[6] + coord[5]),
+          0.25 * (coord[2] + coord[3] + coord[7] + coord[6]),
+      };
 
-    // Calcule la longueur caractéristique de la maille.
-    //   Real3 median1 = face_coord[0] - face_coord[3];
-    //   Real3 median2 = face_coord[2] - face_coord[5];
-    //   Real3 median3 = face_coord[1] - face_coord[4];
-    //   Real d1 = median1.normL2();
-    //   Real d2 = median2.normL2();
-    //   Real d3 = median3.normL2();
+      // Calcule la longueur caractéristique de la maille.
+      Real3 median1 = face_coord[0] - face_coord[3];
+      Real3 median2 = face_coord[2] - face_coord[5];
+      Real3 median3 = face_coord[1] - face_coord[4];
+      Real d1 = median1.normL2();
+      Real d2 = median2.normL2();
+      Real d3 = median3.normL2();
 
-    //   Real dx_numerator = d1 * d2 * d3;
-    //   Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
-    //   Real expected = dx_numerator / dx_denominator;
-    //   view.out_caracteristic_length[cid] = expected;
-    // }
+      Real dx_numerator = d1 * d2 * d3;
+      Real dx_denominator = d1 * d2 + d1 * d3 + d2 * d3;
+      Real expected = dx_numerator / dx_denominator;
+      view.out_caracteristic_length[cid] = expected;
+    }
 
     // Calcule les résultantes aux sommets
-    // computeCQs(coord, face_coord, view.in_out_cell_cqs[cid]);
+    computeCQs(coord, face_coord, view.in_out_cell_cqs[cid]);
 
-    // Span<const Real3> in_cqs(view.in_out_cell_cqs[cid]);
+    Span<const Real3> in_cqs(view.in_out_cell_cqs[cid]);
 
     // Calcule le volume de la maille
-    // {
-    //   Real volume = 0.0;
-    //   for (Integer i_node = 0; i_node < 8; ++i_node)
-    //     volume += math::dot(coord[i_node], in_cqs[i_node]);
-    //   volume /= 3.0;
+    {
+      Real volume = 0.0;
+      for (Integer i_node = 0; i_node < 8; ++i_node)
+        volume += math::dot(coord[i_node], in_cqs[i_node]);
+      volume /= 3.0;
 
-    //   view.out_old_volume[cid] = view.in_out_volume[cid];
-    //   view.in_out_volume[cid] = volume;
-    // }
+      view.out_old_volume[cid] = view.in_out_volume[cid];
+      view.in_out_volume[cid] = volume;
+    }
   };
 }
 
