@@ -1,3 +1,43 @@
+# Instructions,
+"""
+Pour générer la librairie:
+```bash
+uv run python ../src/librairie.py -TC
+```
+
+`-T` permet d'afficher l'AST Python tandis que `-C` affiche les commands utilisées.
+Vous pouvez ensuite vérifier dans `MicroHydroModule.cc` quelle version est utilisée:
+
+```cpp
+/*!
+ * \brief Calcul du volume des mailles, des longueurs caractéristiques
+ * et des résultantes aux sommets.
+ */
+void MicroHydroModule::computeGeometricValues() {
+  //*
+  MicroHydroModule::computeGeometricValuesMLIR();
+  /*/
+  MicroHydroModule::computeGeometricValuesCPP();
+  //*/
+}
+```
+
+Vous pouvez commencer par choisir la version cpp pour enregistrer le résultat de référence:
+
+```bash
+mkdir comparaisons
+STDENV_VERIF=WRITE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
+```
+
+Puis modifier `MicroHydroModule.cc` pour prendre la version MLIR,
+```
+make
+STDENV_VERIF=READ STDENV_VERIF_DIFF_METHOD=RELATIVE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
+```
+"""
+
+
+
 import sys
 
 def SetReal3(result, v1, ope: str, v2, skip_att_v2=False):
@@ -113,7 +153,7 @@ def emit_normal(name, na, nb, face_idx):
 
 
 def emit_cqs(i, five_terms, one_terms):
-    return [
+    return [  # pyright: ignore[reportUnknownVariableType]
         Alloca(f"sum5_{i}", TyStruct("Real3")),
         Alloca(f"sum1_{i}", TyStruct("Real3")),
         *SumReal3([f"sum5_{i}"], five_terms),
@@ -125,7 +165,7 @@ def emit_cqs(i, five_terms, one_terms):
     ]
 
 
-from xdsljson.operations import (
+from jsonmlir.operations import (
     Binary,
     Call,
     Const,
@@ -142,9 +182,9 @@ from xdsljson.operations import (
     Var,
     While,
 )
-from xdsljson.operations.dsl import Alloca
-from xdsljson.pipeline.compiler import compiler
-from xdsljson.variables.ty.ty_struct import TyStruct
+from jsonmlir.operations.dsl import Alloca
+from jsonmlir.pipeline.compiler import compiler
+from jsonmlir.variables.ty.ty_struct import TyStruct
 
 module = Module([
     DefineStruct(
@@ -249,7 +289,7 @@ module = Module([
         ],
     ),
     Function(
-        "xdsl_main", [
+        "main_ciface", [
             ("cnc", TyStruct("ItemConnectivityContainerView")),
             ("in_node_coord", TyMemref([None], TyStruct("Real3"))),
             ("cid", TyScalar(Scalar.i64)),
