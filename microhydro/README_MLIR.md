@@ -33,18 +33,19 @@ Suivez les instructions du repo [jsonMLIR](https://github.com/LouisMaxHa/jsonMLI
 ```bash
 # Cloner le projet
 git clone git@github.com:LouisMaxHa/arcane-benchs.git --branch view-struct-example
-mkdir arcane-benchs/microhydro/build
-cd arcane-benchs/microhydro/build/
+mkdir arcane-benchs/microhydro/
+cd arcane-benchs/microhydro/
 
 # Construire la librairie MLIR
-docker run --rm -it jsonmlir bash
-python ../src/librairie.py -TC
+jsonmlir src/librairie.py -aC  
+cat build/librairie.mlir
 
-
-cat ./build/
-
-
+# Build
+make -C build
+./build/MicroHydro -A,MaxIteration=2 data/MicroHydro.1.1.arc
 ```
+
+## Usage
 
 Vous pouvez ensuite vérifier dans `MicroHydroModule.cc` quelle version est utilisée:
 
@@ -66,11 +67,11 @@ Vous pouvez commencer par choisir la version cpp pour enregistrer le résultat d
 
 ```bash
 mkdir comparaisons
-STDENV_VERIF=WRITE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
+STDENV_VERIF=WRITE STDENV_VERIF_PATH=comparaisons/ build/MicroHydro -A,MaxIteration=2 data/MicroHydro.1.1.arc
 ```
 
 Puis modifier `MicroHydroModule.cc` pour prendre la version MLIR,
 ```
 make
-STDENV_VERIF=READ STDENV_VERIF_DIFF_METHOD=RELATIVE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
+STDENV_VERIF=READ STDENV_VERIF_DIFF_METHOD=RELATIVE STDENV_VERIF_PATH=comparaisons/ build/MicroHydro -A,MaxIteration=2 data/MicroHydro.1.1.arc
 ```
