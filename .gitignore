@@ -60,6 +60,7 @@ Debug*
 
 # [AL] personal build notes
 perso_build_install.txt
+microhydro/build/
 
 # KDE config directory file
 .directory

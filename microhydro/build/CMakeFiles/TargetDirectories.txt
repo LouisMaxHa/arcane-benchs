@@ -1,4 +1,0 @@
-/home/lmx/git/arcane-benchs/microhydro/build/CMakeFiles/MicroHydro.dir
-/home/lmx/git/arcane-benchs/microhydro/build/CMakeFiles/test.dir
-/home/lmx/git/arcane-benchs/microhydro/build/CMakeFiles/edit_cache.dir
-/home/lmx/git/arcane-benchs/microhydro/build/CMakeFiles/rebuild_cache.dir
