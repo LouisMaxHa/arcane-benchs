@@ -2,9 +2,12 @@
 
 Ce projet à pour but de tester une nouvelle pipeline de compilation utilisant MLIR.
 
-## Installation des dépendances
-### Arcane
-Pour [Arcane](https://github.com/arcaneframework/framework):
+## Installation
+Installation des dépendances:
+<details>
+<summary>Installation d'Arcanne</summary>
+
+Instruction pour installer Arcane en utilisant spack:
 ```bash
 # Spack : https://spack.io/
 git clone --depth=2 https://github.com/spack/spack.git
@@ -25,10 +28,13 @@ spack add arcane-framework +arcane build_type=Debug %clang
 spack install
 ```
 
-### jsonMLIR
+</details>
+<details>
+<summary>Installation de jsonMLIR</summary>
+
 Suivez les instructions du repo [jsonMLIR](https://github.com/LouisMaxHa/jsonMLIR)
 
-## Installation
+</details>
 
 ```bash
 # Cloner le projet
