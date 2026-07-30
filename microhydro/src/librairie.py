@@ -1,43 +1,4 @@
 # Instructions,
-"""
-Pour générer la librairie:
-```bash
-uv run python ../src/librairie.py -TC
-```
-
-`-T` permet d'afficher l'AST Python tandis que `-C` affiche les commands utilisées.
-Vous pouvez ensuite vérifier dans `MicroHydroModule.cc` quelle version est utilisée:
-
-```cpp
-/*!
- * \brief Calcul du volume des mailles, des longueurs caractéristiques
- * et des résultantes aux sommets.
- */
-void MicroHydroModule::computeGeometricValues() {
-  //*
-  MicroHydroModule::computeGeometricValuesMLIR();
-  /*/
-  MicroHydroModule::computeGeometricValuesCPP();
-  //*/
-}
-```
-
-Vous pouvez commencer par choisir la version cpp pour enregistrer le résultat de référence:
-
-```bash
-mkdir comparaisons
-STDENV_VERIF=WRITE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
-```
-
-Puis modifier `MicroHydroModule.cc` pour prendre la version MLIR,
-```
-make
-STDENV_VERIF=READ STDENV_VERIF_DIFF_METHOD=RELATIVE STDENV_VERIF_PATH=comparaisons/ ./MicroHydro -A,MaxIteration=2 ../data/MicroHydro.1.1.arc
-```
-"""
-
-
-
 import sys
 
 def SetReal3(result, v1, ope: str, v2, skip_att_v2=False):

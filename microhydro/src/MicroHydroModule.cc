@@ -767,11 +767,12 @@ struct ComputeGeometricValuesView final {
 extern "C" {
 int64_t
 _mlir_ciface_main_ciface(const MemRefType<uint8_t, 1> *cnc,
-                       const MemRefType<uint8_t, 1> *in_node_coord, int64_t cid,
-                       const MemRefType<uint8_t, 1> *in_out_cell_cqs,
-                       const MemRefType<double, 1> *in_out_volume,
-                       const MemRefType<double, 1> *out_old_volume,
-                       const MemRefType<double, 1> *out_caracteristic_length);
+                         const MemRefType<uint8_t, 1> *in_node_coord,
+                         int64_t cid,
+                         const MemRefType<uint8_t, 1> *in_out_cell_cqs,
+                         const MemRefType<double, 1> *in_out_volume,
+                         const MemRefType<double, 1> *out_old_volume,
+                         const MemRefType<double, 1> *out_caracteristic_length);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -781,11 +782,11 @@ _mlir_ciface_main_ciface(const MemRefType<uint8_t, 1> *cnc,
  * et des résultantes aux sommets.
  */
 void MicroHydroModule::computeGeometricValues() {
-  //*
-  MicroHydroModule::computeGeometricValuesMLIR();
-  /*/
-  MicroHydroModule::computeGeometricValuesCPP();
-  //*/
+  if (true) {
+    MicroHydroModule::computeGeometricValuesMLIR();
+  } else {
+    MicroHydroModule::computeGeometricValuesCPP();
+  }
 }
 
 /*!
@@ -822,9 +823,9 @@ void MicroHydroModule::computeGeometricValuesMLIR() {
         reinterpret_cast<uint8_t *>(m_cell_cqs.asArray()[cid].data()), 24 * 8);
 
     _mlir_ciface_main_ciface(&memref_cnc, &memref_in_node_coord, cid,
-                           &memref_in_out_cell_cqs, &memref_in_out_volume,
-                           &memref_out_old_volume,
-                           &memref_out_caracteristic_length);
+                             &memref_in_out_cell_cqs, &memref_in_out_volume,
+                             &memref_out_old_volume,
+                             &memref_out_caracteristic_length);
   };
 }
 
@@ -993,7 +994,7 @@ void MicroHydroModule::hydroExit() {
       if (options()->stComparator()->isReferenceExist(0)) {
         options()->stComparator()->addEpsilonRow("m_density_ratio_maximum",
                                                  1.0e-10);
-         options()->stComparator()->addEpsilonRow("new_dt", 1.0e-13);
+        options()->stComparator()->addEpsilonRow("new_dt", 1.0e-13);
         if (options()->stComparator()->compareWithReference(0)) {
           info() << "Comparator: OK";
         } else {
