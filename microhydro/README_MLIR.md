@@ -3,7 +3,6 @@
 Ce projet à pour but de tester une nouvelle pipeline de compilation utilisant MLIR.
 
 ## Installation
-Installation des dépendances:
 <details>
 <summary>Installation d'Arcanne</summary>
 
